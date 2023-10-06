@@ -37,6 +37,7 @@ app.set('view engine', 'ejs');
 // Rota para a página de login
 app.get('/', (req, res) => {
 res.render('index');
+app.use(express.static(__dirname + '/'));
 });
 
 // Rota para processar o formulário de login
