@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+html {
+  height: 100%;
+  
+}
+
+* 
+body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
+}
+
+h1 {
+    font-family: georgia;
+    font-size: 50px;
+}
+.logoimg{
+  display: inline-block;
+}
+
+.e311_1252 {
+  color: rgba(0, 0, 0, 0.550000011920929);
+  width: 193.5px;
+  height: 24.749998092651367px;
+  font-family: Akshar;
+  text-align: left;
+  font-size: 18px;
+  letter-spacing: 0;
+  justify-content: right;
+  position: absolute;
+  top: 5.35%;
+  left: 80px;
+}
+.formulario {
+    text-align: center;
+    width: 100%;
+}
+.casa {
+  width: 50px;
+  height: 50px;
+  right: 90px;
+  position: absolute;
+  margin-top: 30px;
+  
+}
+
+input{
+    width: 500px;
+    height: 20px;
+    border-radius: 10px;
+}
+button {
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: rgba(88, 181, 235, 0.788);
+    transition: 0.3s;
+    font-family: georgia;
+    font-size: 20px;
+}
+button:hover{
+    background-color: rgba(35, 143, 206, 0.356);
+}
+.A {
+    background-color: blue;
+}
+</style>
+</head>
+<body>
+    <div>
+        <ul>
+          <a href="index.html">
+
+          </a>
+        </ul>
+        <img class="logo-pequeno" src="IMAGENS/logo_menor.png">
+        <span class="e311_1252">SP Medical Group</span>
+      </div>
+<form action="/login" method="post" class="formulario"><br><br>
+    <h1>Login</h1><br><br>
+<label for="username">Usuário:</label>
+<input type="text" id="username" name="username" required><br><br>
+<label for="password">Senha:</label>
+<input type="password" id="password" name="password" required><br><br>
+<button type="submit">Login</button>
+</form>
+</body>
+</html>
