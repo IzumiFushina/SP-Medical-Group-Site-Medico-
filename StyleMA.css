@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body{
+  background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 20%, rgba(0,108,169,1) 100%);
+}
+.logo{
+display:flex;
+justify-content: center;
+  
+}
+.casa{
+width: 50px ;
+  height: 50px;
+right: 100px;
+  position: absolute;
+  margin-top: 30px;
+  
+
+
+  
+}
+.e311_1252 { 
+	color:rgba(0, 0, 0, 0.550000011920929);
+	width:193.5px;
+	height:24.749998092651367px;
+	font-family:Akshar;
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+  justify-content: right;
+   position: absolute;
+  top: 4%;
+  left: 80px;
+}
+#login{
+  display:flex;
+  position: absolute;
+  justify-content: center;
+  flex-direction:column;
+  left:45%;
+}
+.form{
+  text-align: center;
+
+}
+.login-1{
+text-align: center; 
+  
+}
+.submenu{
+  text-align: center;
+}
+input {
+  border-radius: 20px;
+   margin-bottom: 20px;
+  width: 650px ;
+  height: 30px;
+  font-size: 15px;
+}
+.nome{
+   border-radius: 20px;
+  position: absolute;
+  top: 500px; 
+   margin-bottom: 20px;
+  left: 500px;
+  width: 650px ;
+  height: 30px;
+  font-size: 15px;
+  padding-left: 10px;
+}

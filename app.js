@@ -9,7 +9,7 @@ const db = mysql.createConnection({
 host: 'localhost',
 user: 'phpmyadmin',
 password: '0z0x0c0v0b0n0m',
-database: 'mydbrun',
+database: 'spmedicalgroupdb',
 });
 
 db.connect((err) => {
@@ -36,7 +36,7 @@ app.set('view engine', 'ejs');
 
 // Rota para a página de login
 app.get('/', (req, res) => {
-res.render('login');
+res.render('index');
 });
 
 // Rota para processar o formulário de login
@@ -63,7 +63,7 @@ app.get('/dashboard', (req, res) => {
 
 if (req.session.loggedin) {
 res.send(`Bem-vindo, ${req.session.username}!<br><a href="/logout">Sair</a>`);
-res.sendFile(__dirname + '/views/index.ejs');
+res.sendFile(__dirname + 'view/index');
 app.use(express.static(__dirname + '/'));
 } else {
 res.send('Faça login para acessar esta página. <a href="/">Login</a>');

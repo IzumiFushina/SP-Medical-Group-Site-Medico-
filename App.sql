@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS mydbrun;
-USE mydbrun;
+CREATE DATABASE IF NOT EXISTS spmedicalgroupdb;
+USE spmedicalgroupdb;
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
