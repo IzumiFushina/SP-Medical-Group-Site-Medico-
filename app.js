@@ -38,6 +38,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
 res.render('index');
 app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/'));
 });
 
 // Rota para processar o formulário de login
@@ -65,7 +66,7 @@ app.get('/dashboard', (req, res) => {
 if (req.session.loggedin) {
 res.send(`Bem-vindo, ${req.session.username}!<br><a href="/logout">Sair</a>`);
 res.sendFile(__dirname + 'view/index');
-app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/IMAGENS'));
 } else {
 res.send('Faça login para acessar esta página. <a href="/">Login</a>');
 }
@@ -78,6 +79,6 @@ res.redirect('/');
 });
 });
 
-app.listen(3000, () => {
-console.log('Servidor rodando na porta 3000');
+app.listen(5321, () => {
+console.log('Servidor rodando na porta 5321');
 });
