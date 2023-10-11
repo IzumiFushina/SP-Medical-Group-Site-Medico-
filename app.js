@@ -3,6 +3,8 @@ const mysql = require('mysql');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const app = express();
+const path = require('path');
+
 
 // Configurar a conexão com o banco de dados MySQL
 const db = mysql.createConnection({
@@ -41,6 +43,9 @@ app.use(express.static(__dirname + '/'));
 app.use(express.static(__dirname + '/'));
 });
 
+app.get('/login', (req, res) => {
+    res.render('login'); // Renders views/login.ejs
+  });
 // Rota para processar o formulário de login
 app.post('/login', (req, res) => {
 const { username, password } = req.body;
@@ -79,6 +84,10 @@ res.redirect('/');
 });
 });
 
-app.listen(5321, () => {
-console.log('Servidor rodando na porta 5321');
+app.get('/Cadastro', (req, res) => {
+    res.render('Cadastro'); // Renders views/login.ejs
+  });
+
+app.listen(8321, () => {
+console.log('Servidor rodando na porta 8321');
 });
