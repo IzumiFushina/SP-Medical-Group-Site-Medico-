@@ -4,160 +4,114 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>replit</title>
-    <link href="cadastro2.css" rel="stylesheet" type="text/css" />
+    <title>Cadastro</title>
+    <style>
+      html {
+        height: 100%;
+        
+      }
+      
+      * 
+      body {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
+      }
+      a {
+        color: black;
+      }
+      h1 {
+          font-family: georgia;
+          font-size: 50px;
+      }
+      .logoimg{
+        display: inline-block;
+      }
+      
+      .e311_1252 {
+        color: rgba(0, 0, 0, 0.550000011920929);
+        width: 193.5px;
+        height: 24.749998092651367px;
+        font-family: Akshar;
+        text-align: left;
+        font-size: 18px;
+        letter-spacing: 0;
+        justify-content: right;
+        position: absolute;
+        top: 5.35%;
+        left: 80px;
+      }
+      .formulario {
+          text-align: center;
+          width: 100%;
+      }
+      .casa {
+        width: 50px;
+        height: 50px;
+        right: 90px;
+        position: absolute;
+        margin-top: 30px;
+        
+      }
+      
+      input{
+          width: 500px;
+          height: 20px;
+          border-radius: 10px;
+      }
+      button {
+          width: 150px;
+          height: 35px;
+          border-radius: 10px;
+          background-color: rgba(88, 181, 235, 0.788);
+          transition: 0.3s;
+          font-family: georgia;
+          font-size: 20px;
+      }
+      button:hover{
+          background-color: rgba(35, 143, 206, 0.356);
+      }
+      .A {
+          background-color: blue;
+      }
+      .voltar {
+        display: block;
+        width: 40px;
+        height: 50px;
+        margin-left: 85%;
+      }
+    </style>
   </head>
   <body>
-    <div class="logom">
-      <img src="IMAGENS/logo_menor.png">
+    <div>
       <ul>
-        <a href="index.html">
-          <img src="IMAGENS/casa.png" class="casa">
+        <a href="/">
+          <img src="IMAGENS/casa.png" class="voltar">
         </a>
       </ul>
+      <img class="logo-pequeno" src="IMAGENS/logo_menor.png">
       <span class="e311_1252">SP Medical Group</span>
-      <div class="logo">
-        <img src="IMAGENS/logo_maior.png">
-      </div>
     </div>
-
-
-<head>
-  
-<script>
-function agendamento(){
-  const form = document.querySelector('form');
-  const consultasContainer = document.querySelector('#consultas-container');
-  let consultas = [];
-  
-}
-</script>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="styleMA.css" rel="stylesheet" type="text/css" />
-
-  
-    <div id="Login" class="submenu">  
-      <form id="formCadastro">
-        <h1 Login class="login-1"> Crie sua conta </h1>
-        <p class="form">
-          <input placeholder="Nome do usuário" type="text" id="nome" name="nome" required><br> 
-          <input placeholder="Seu email" type="email" id="email" name="email" required>
-        </p>
-        <p>
-          <input placeholder="Idade" type="number" id="idade" name="idade" required>
-        </p>
-        <p>
-          <input placeholder="CPF" type="text" id="cpf" name="cpf" required>
-        </p>
-        <p>
-          <select id="sexo" name="sexo" required>
-            <option value="">Selecione o sexo</option>
-            <option value="M">Masculino</option>
-            <option value="F">Feminino</option>
-            <option value="O">Outro</option>
-          </select>
-        </p>
-        <p>
-          <input placeholder="Crie uma senha" type="password" id="senha" name="senha" required>
-        </p>
-        <p>
-          <input placeholder="Confirme sua senha" type="password" id="confirmarSenha" name="confirmarSenha" required>
-        </p>
-        <button type="submit" class="Cadastrar"><a href="login.html"></a>Cadastrar</button>
-      </form>
-    </div>
-  
-    <script>
-      // Dados cadastrados
-      const dados = [
-        {
-          nome: "João Silva",
-          email: "joao.silva@gmail.com",
-          idade: 30,
-          cpf: "111.222.333-44",
-          sexo: "M",
-          senha: "abc123"
-        },
-        {
-          nome: "Maria Souza",
-          email: "maria.souza@gmail.com",
-          idade: 25,
-          cpf: "555.666.777-88",
-          sexo: "F",
-          senha: "def456"
-        }
-      ];
-  
-      // Função para validar o CPF
-      function validarCPF(cpf) {
-        cpf = cpf.replace(/[^\d]+/g, '');
-  
-        if (cpf == '') return false;
-        
-        // Elimina CPFs invalidos conhecidos
-        if (cpf.length != 11 || 
-          cpf == "00000000000" || 
-          cpf == "11111111111" || 
-          cpf
-<body>
-  <div class="content">
-    <form id="form">
-<div id= "Login" class="submenu">  
-  <form method="post"action="">
-    <h1 Login class="login-1"> Crie sua conta </h1>
     
-   
-      <p class="form">
-        <input placeholder="Nome do usuário" type="text" class="inputs required" oninput="nameValidate()">
+   <!-- views/register.ejs -->
+<form action="/Cadastro" method="post" class="formulario">
+  <h1>Cadastro</h1><br><br>
 
-        <p></p>
-        <label for="emai_login"> </label>
-        <input placeholder="Seu email" type="text" class="inputs required">      </p>
-     <p>
-       <label for="E-mail ou número de telefone"> </label>
-        <input placeholder="Idade" type="text" class="inputs required">
+  <input placeholder="Nome completo" type="text" name="nomecompleto" id="nomecompleto" required><br><br>
 
-     </p>
+  <input placeholder="E-mail" type="text" name="email" id="email" required><br><br>
 
-    <p>
-        <label for="emai_login"> </label>
-        <input placeholder="CPF" type="text" class="inputs required">
-      </p>
+  <input placeholder="CPF apenas os números" type="text" name="cpf" id="cpf" required><br><br>
 
-      <p>
-        <label for="emai_login"> </label>
-        <input placeholder="Sexo" type="text" class="inputs required">
+  <input placeholder="Data de nascimento ex.: 11/05/1980" type="text" name="datanascimento" id="datanascimento" required><br><br>
 
-      </p>
-    
-      <p>
-        <label for="emai_login"> </label>
-        <input placeholder="Crie uma senha" type="password" class="inputs required">
+  <input placeholder="Sexo" type="text" name="sexo" id="sexo" required><br><br>
 
-      </p>
-    <p> <label for="confirmar_senha"> </label>
-        <input placeholder="Confirme sua senha" type="password" class="inputs required">
-    </p>
+  <input placeholder="Nome de Usuário" type="text" name="username" id="username" required><br><br>
 
-        <input type="checkbox" name="manter logado" id="manter logado" value="" />
-        
-    <label for="manter logado">Manter-me logado</label> 
-  </p>
+  <input placeholder="Senha" type="password" name="password" id="password" required><br><br>
 
-      <p>
-        <input type="submit" value="Cadastrar" /> 
-      </p>
-
-
-  </form>
-</div>
-
-</div>
-
-
+  <button type="submit">Cadastrar</button>
+</form>
 
 </body>
 

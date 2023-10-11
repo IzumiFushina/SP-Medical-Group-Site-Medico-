@@ -30,16 +30,15 @@ resave: true,
 saveUninitialized: true,
 })
 );
-
+app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configurar EJS como o motor de visualização
 app.set('view engine', 'ejs');
-
 // Rota para a página de login
 app.get('/', (req, res) => {
 res.render('index');
-app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/'));
 });
 
@@ -85,8 +84,23 @@ res.redirect('/');
 });
 
 app.get('/Cadastro', (req, res) => {
-    res.render('Cadastro'); // Renders views/login.ejs
+    res.render('Cadastro');
   });
+  
+  app.post('/Cadastro', (req, res) => {
+    const {nomecompleto, cpf, datanascimento, sexo, username, password, email} = req.body;
+  
+    const query = 'INSERT INTO users (nomecompleto, cpf, datanascimento, sexo, username, password, email) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    db.query(query, [nomecompleto, cpf, datanascimento, sexo, username, password, email], (err, results) => {
+      if (err) {
+        console.error('Erro ao inserir usuário:', err);
+        res.send('Erro ao cadastrar o usuário.');
+      } else {
+        res.send('Usuário cadastrado com sucesso! <a href="/login">Faça login</a>');
+      }
+    });
+  });
+  
 
 app.listen(8321, () => {
 console.log('Servidor rodando na porta 8321');
