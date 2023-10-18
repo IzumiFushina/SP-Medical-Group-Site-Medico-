@@ -96,11 +96,15 @@ app.get('/Cadastro', (req, res) => {
         console.error('Erro ao inserir usuário:', err);
         res.send('Erro ao cadastrar o usuário.');
       } else {
-        res.send('Usuário cadastrado com sucesso! <a href="/login">Faça login</a>');
+        res.redirect('/Carregamento');
       }
     });
   });
   
+
+  app.get('/Carregamento', (req, res) => {
+    res.render('Carregamento');
+  });
 
 app.listen(8321, () => {
 console.log('Servidor rodando na porta 8321');
