@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento de Consulta</title>
+  <style>
+    html {
+  height: 100%;
+  
+}
+    * 
+    body {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
+      font-family: Arial, sans-serif;
+    }
+
+    .cabecalho {
+      background-color: #3fbbc0;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .titulo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    input[type="text"],
+    select,
+    input[type="date"],
+    input[type="time"] {
+      width: 95%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Agendar Consulta Médica</h2>
+    <form id="consulta-form">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="date">Data:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Hora:</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="doctor">Escolha o Médico:</label>
+      <select id="doctor" name="doctor" required>
+        <option value="">Selecione um médico</option>
+        <option value="Dr. João da Silva">Dr. João da Silva</option>
+        <option value="Dra. Maria dos Santos">Dra. Maria dos Santos</option>
+        <option value="Dr. José Carlos">Dr. José Carlos</option>
+      </select>
+
+      <button type="submit">Agendar</button>
+    </form>
+    <script></script>
+</body>
+</html>

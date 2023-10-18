@@ -68,7 +68,7 @@ res.send('Credenciais incorretas. <a href="/">Tente novamente</a>');
 app.get('/dashboard', (req, res) => {
 
 if (req.session.loggedin) {
-res.send(`Bem-vindo, ${req.session.username}!<br><a href="/logout">Sair</a>`);
+res.send(`Bem-vindo, ${req.session.username}!<br><a href="/agendamento">Entrar na sua página</a><br><a href="/logout">Sair</a>`);
 res.sendFile(__dirname + 'view/index');
 app.use(express.static(__dirname + '/IMAGENS'));
 } else {
@@ -81,6 +81,10 @@ app.get('/logout', (req, res) => {
 req.session.destroy(() => {
 res.redirect('/');
 });
+});
+
+app.get('/agendamento', (req, res) => {
+  res.render('agendamento');
 });
 
 app.get('/Cadastro', (req, res) => {
