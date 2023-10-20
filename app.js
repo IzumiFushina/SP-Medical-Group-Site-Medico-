@@ -110,6 +110,6 @@ app.get('/Cadastro', (req, res) => {
     res.render('Carregamento');
   });
 
-app.listen(8321, () => {
-console.log('Servidor rodando na porta 8321');
+app.listen(5321, () => {
+console.log('Servidor rodando na porta 5321');
 });
