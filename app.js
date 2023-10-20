@@ -52,15 +52,29 @@ const { username, password } = req.body;
 const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
 
 db.query(query, [username, password], (err, results) => {
-if (err) throw err;
+if (err) {
+  console.error('Erro ao verificar o login:', err);
+  res.status(500).send('Erro ao verificar o login');
+} else if (result.length > 0) {
+  const usertype = result[0].type;
 
-if (results.length > 0) {
-req.session.loggedin = true;
-req.session.username = username;
-res.redirect('/dashboard');
+  switch (usertype) {
+    case 'Administrador':
+      res.redirect('/assets/admin-pages/assets/indexadmin');
+      break;
+    case 'Doctor':
+      res.redirect('/');
+      break;
+    default:
+      console.log('Tipo de usuário desconhecido');
+      res.redirect('/dashboard');
+      break;
+  }
 } else {
-res.send('Credenciais incorretas. <a href="/">Tente novamente</a>');
+  console.log('Credenciais incorretas')
+  res.status(401).send('Credenciais inválidas');
 }
+
 });
 });
 
