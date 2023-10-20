@@ -87,6 +87,20 @@ app.get('/agendamento', (req, res) => {
   res.render('agendamento');
 });
 
+app.post('/agendamento', (req, res) => {
+const {username, date, horario, medico, informacoesamais} = req.body;
+  
+const query = 'INSERT INTO consultas (username, date, horario, medico, informacoesamais) VALUES (?, ?, ?, ?, ?)';
+db.query(query, [username, date, horario, medico, informacoesamais], (err, results) => {
+  if (err) {
+    console.error('Erro ao agendar a consulta', err);
+    res.send('Erro ao agendar a consulta <a href="/agendamento"> Voltar para a página de agendamento</a>.');
+  } else {
+    res.send('Agendamento feito com sucesso <a href="/agendamento"> Voltar para a página de agendamento</a>');
+  }
+});
+});
+
 app.get('/Cadastro', (req, res) => {
     res.render('Cadastro');
   });

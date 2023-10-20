@@ -56,17 +56,6 @@
       margin-left: 10px;
     }
 
-    input[type="text"],
-    select,
-    input[type="date"],
-    input[type="time"] {
-      width: 95%;
-      padding: 10px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
 
     button[type="submit"] {
       background-color: #007bff;
@@ -82,23 +71,22 @@
 
   <div class="container">
     <h2>Agendar Consulta Médica</h2>
-    <form id="consulta-form">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required>
+    <form action="/agendamento" method="post" id="consultas">
 
-      <label for="date">Data:</label>
-      <input type="date" id="date" name="date" required>
+      <input placeholder="Nome completo" type="text" id="username" name="username" required>
 
-      <label for="time">Hora:</label>
-      <input type="time" id="time" name="time" required>
+      <input placeholder="" type="date" id="date" name="date" required>
 
-      <label for="doctor">Escolha o Médico:</label>
-      <select id="doctor" name="doctor" required>
+      <input placeholder="" type="time" id="horario" name="horario" required>
+
+      <select id="medico" name="medico" required>
         <option value="">Selecione um médico</option>
         <option value="Dr. João da Silva">Dr. João da Silva</option>
         <option value="Dra. Maria dos Santos">Dra. Maria dos Santos</option>
         <option value="Dr. José Carlos">Dr. José Carlos</option>
       </select>
+
+      <input placeholder="informações a mais" type="informacoesamais" id="informacoesamais" name="informacoesamais" required>
 
       <button type="submit">Agendar</button>
     </form>
