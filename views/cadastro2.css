@@ -1,6 +1,6 @@
 /* Estilo global para o corpo da página */
 html {
-  height: 100%;
+  height: 110%;
   
 }
 
@@ -16,6 +16,7 @@ body {
     width: auto; /* Define a largura da imagem como automática */
   height: auto; /* Define a altura da imagem como automática */
   align-self: center; /* Centraliza verticalmente a imagem dentro da div */
+  
 }
   
 
@@ -41,7 +42,7 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     
       width: 700px; /* Define a largura do container */
-      height: 700px; /* Define a altura do container */
+      height: 725px; /* Define a altura do container */
     
     
   }
@@ -76,7 +77,7 @@ body {
     margin-top: 5px;
     border: 1px solid #000000;
     border-radius: 3px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman';
     
   }
 
@@ -89,7 +90,7 @@ body {
     border-radius: 3px;
   }
 
-  #senha{
+  #password{
     width: 90%;
     padding: 15px;
     margin-top: 5px;
@@ -126,7 +127,7 @@ body {
   
   
   /* Estilo para o botão de cadastro */
-  .Cadastrar {
+  .Cadastro {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -170,6 +171,6 @@ body {
   input[type="password"] {
     width: 48%;
     margin-right: 2%;
+    border-radius: 5px;
   }
-  
   

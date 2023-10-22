@@ -114,16 +114,11 @@ app.get('/Cadastro', (req, res) => {
         console.error('Erro ao inserir usuário:', err);
         res.send('Erro ao cadastrar o usuário.');
       } else {
-        res.redirect('/Carregamento');
+        res.send('SP-Medical-Group agradece por sua escolha <a href="/login">Volte para página de login</a>');
       }
     });
   });
   
-
-  app.get('/Carregamento', (req, res) => {
-    res.render('Carregamento');
-  });
-
 app.listen(5321, () => {
 console.log('Servidor rodando na porta 5321');
 });
