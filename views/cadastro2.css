@@ -1,154 +1,175 @@
- html {
-    height: 100%;
-    width: 100%;
-  }
-  body{
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 20%, rgba(0,108,169,1) 100%);
-  background-repeat: no-repeat;
-  }
+/* Estilo global para o corpo da página */
+html {
+  height: 100%;
+  
+}
+
+* 
+body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
+}
+  
+  /* editar logo */
+
   .logo{
-  display:flex;
-  justify-content: center;
-    
-  }
-  .casa{
-  width: 50px ;
-    height: 50px;
-  right: 100px;
-    position: absolute;
-    margin-top: 0px;
-    
+    width: auto; /* Define a largura da imagem como automática */
+  height: auto; /* Define a altura da imagem como automática */
+  align-self: center; /* Centraliza verticalmente a imagem dentro da div */
+}
   
-  
-    
+
+  .divlogo{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 120px; /* Torna a div do tamanho da janela de visualização */
+  padding: 20px;
+
   }
- 
-  .e311_1252 { 
-      color:rgba(0, 0, 0, 0.550000011920929);
-      width:193.5px;
-      height:24.749998092651367px;
-      font-family:Akshar;
-      text-align:left;
-      font-size:18px;
-      letter-spacing:0;
-    justify-content: right;
-     position: absolute;
-    top: 4.35%;
-    left: 80px;
-  }
-  #login{
-    display:flex;
-    position: absolute;
-    justify-content: center;
-    flex-direction:column;
-    left:45%;
-  }
-  .form{
-    text-align: center;
 
   
-  }
-  .login-1{
-  text-align: center; 
   
+  
+  /* Estilo para o contêiner do formulário de cadastro */
+  .submenu {
+    background-color: #ffffff;
+    border-radius: 50px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    
+      width: 700px; /* Define a largura do container */
+      height: 700px; /* Define a altura do container */
+    
     
   }
-  .submenu{
-    text-align: center;
-  }
   
-  #nome{
-     border-radius: 30px;
-    position: absolute
-    top: 500px; 
-     margin-bottom: 40px;
-    left: 500px;
-    width: 650px ;
-    height: 30px;
-    font-size: 15px;
-    padding-left: 10px;
-  }
-  input {
-    border-radius: 20px;
+  /* Estilo para o título "Crie sua conta" */
+  h1 {
+   text-align: center;
+    font-size: 24px;
+    margin: 0;
     margin-bottom: 20px;
-    width: 650px;
-    height: 30px;
-    font-size: 15px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
   }
-  #email{
-    border-radius: 20px;
-    position: absolute
-    top: 500px; 
-     margin-bottom: 20px;
-    left: 500px;
-    width: 650px ;
-    height: 30px;
-    font-size: 15px;
-    padding-left: 10px;
+  
+  /* Estilo para os rótulos dos campos de entrada */
+  label {
+    display: block;
+    text-align: left;
+    margin-top: 0px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
   }
-  #idade{
-     border-radius: 20px;
-    position: absolute
-    top: 500px; 
-     margin-bottom: 20px;
-    left: 500px;
-    width: 650px ;
-    height: 30px;
-    font-size: 15px;
-    padding-left: 10px;
-  }
-  #cpf{
-     border-radius: 20px;
-    position: absolute
-    top: 500px; 
-     margin-bottom: 20px;
-    left: 500px;
-    width: 650px ;
-    height: 30px;
-    font-size: 15px;
-    padding-left: 10px;
-  }
-  #sexo{
-   border-radius: 40px;
-    position: absolute
-    top: 500px; 
-     margin-bottom: 20px;
-    left: 500px;
-    width: 650px ;
-    height: 30px;
-    font-size: 15px;
-    padding-left: 10px;
-  }
-  #senha{
-    
-     border-radius: 20px;
-    position: absolute
-    top: 500px; 
-     margin-bottom: 20px;
-    left: 500px;
-    width: 650px ;
-    height: 30px;
-    font-size: 15px;
-    padding-left: 10px;
-  }
-  #cofirmarSenha{
-  border-radius: 20px;
-    position: absolute
-    top: 500px; 
-     margin-bottom: 20px;
-    left: 500px;
-    width: 650px ;
-    height: 30px;
-    font-size: 15px;
-    padding-left: 10px;
-  }
-  .Cadastrar {
-    border-radius: 6px;
+  
+  /* Estilo para os campos de entrada de texto */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  select {
+    width: 90%;
     padding: 15px;
-    cursor: pointer;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+
+
+  #sexo{
+    width: 96%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+  }
+
+  #senha{
+    width: 90%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+  }
+
+  #confirmarSenha{
+    width: 90%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+  }
+  input::placeholder, textarea::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: normal; /* Peso da fonte */
+    color: #999; /* Cor do texto do placeholder */
+  }
+
+  select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: normal; /* Peso da fonte */
+  }
+
+  input[type="text"] {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: normal; /* Peso da fonte */
+  }
+  
+  
+  
+  /* Estilo para o botão de cadastro */
+  .Cadastrar {
+    background-color: #007bff;
     color: #fff;
     border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
     font-size: 16px;
-    background-color: #006CA9;
+    font-family: Arial, Helvetica, sans-serif;
+    
+      position: relative;
+      left: 170px; /* Move o botão 10px para a direita */
+    
+
+    
   }
+  
+  /* Estilo para links */
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  /* Estilo para mensagens de erro */
+
+  
+  /* Estilo para os elementos select */
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Estilo para parágrafos dentro do formulário */
+  p.form {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo para campos de senha */
+  input[type="password"] {
+    width: 48%;
+    margin-right: 2%;
+  }
+  
+  

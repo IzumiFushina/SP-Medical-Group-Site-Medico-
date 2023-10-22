@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const app = express();
@@ -47,36 +47,22 @@ app.get('/login', (req, res) => {
   });
 // Rota para processar o formulário de login
 app.post('/login', (req, res) => {
-const { username, password } = req.body;
-
-const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
-
-db.query(query, [username, password], (err, results) => {
-if (err) {
-  console.error('Erro ao verificar o login:', err);
-  res.status(500).send('Erro ao verificar o login');
-} else if (result.length > 0) {
-  const usertype = result[0].type;
-
-  switch (usertype) {
-    case 'Administrador':
-      res.redirect('/assets/admin-pages/assets/indexadmin');
-      break;
-    case 'Doctor':
-      res.redirect('/');
-      break;
-    default:
-      console.log('Tipo de usuário desconhecido');
-      res.redirect('/dashboard');
-      break;
+  const { username, password } = req.body;
+  
+  const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
+  
+  db.query(query, [username, password], (err, results) => {
+  if (err) throw err;
+  
+  if (results.length > 0) {
+  req.session.loggedin = true;
+  req.session.name = username;
+  res.redirect('/agendamento');
+  } else {
+  res.send('Credenciais incorretas. <a href="/">Tente novamente</a>');
   }
-} else {
-  console.log('Credenciais incorretas')
-  res.status(401).send('Credenciais inválidas');
-}
-
-});
-});
+  });
+  });
 
 // Rota para a página do painel
 app.get('/dashboard', (req, res) => {
