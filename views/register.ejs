@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Register - SB Admin</title>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+<style>
+    /* Estilo global para o corpo da página */
+html {
+  height: 110%;
+  
+}
+
+* 
+body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
+}
+  
+  /* editar logo */
+
+  .logo{
+    width: auto; /* Define a largura da imagem como automática */
+  height: auto; /* Define a altura da imagem como automática */
+  align-self: center; /* Centraliza verticalmente a imagem dentro da div */
+  
+}
+  
+
+  .divlogo{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 120px; /* Torna a div do tamanho da janela de visualização */
+  padding: 20px;
+
+  }
+
+  
+  
+  
+  /* Estilo para o contêiner do formulário de cadastro */
+  .submenu {
+    background-color: #ffffff;
+    border-radius: 50px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    
+      width: 700px; /* Define a largura do container */
+      height: 725px; /* Define a altura do container */
+    
+    
+  }
+  
+  /* Estilo para o título "Crie sua conta" */
+  h1 {
+   text-align: center;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 20px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Estilo para os rótulos dos campos de entrada */
+  label {
+    display: block;
+    text-align: left;
+    margin-top: 0px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Estilo para os campos de entrada de texto */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  select {
+    width: 90%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    font-family: 'Times New Roman';
+    
+  }
+
+
+  #sexo{
+    width: 96%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+  }
+
+  #password{
+    width: 90%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+  }
+
+  #tipo{
+    width: 96%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+  } 
+
+  #confirmarSenha{
+    width: 90%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+  }
+  input::placeholder, textarea::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: normal; /* Peso da fonte */
+    color: #999; /* Cor do texto do placeholder */
+  }
+
+  select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: normal; /* Peso da fonte */
+  }
+
+  input[type="text"] {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: normal; /* Peso da fonte */
+  }
+  
+  
+  
+  /* Estilo para o botão de cadastro */
+  .Cadastro {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+      position: relative;
+      left: 170px; /* Move o botão 10px para a direita */
+    
+
+    
+  }
+  
+  /* Estilo para links */
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  /* Estilo para mensagens de erro */
+
+  
+  /* Estilo para os elementos select */
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Estilo para parágrafos dentro do formulário */
+  p.form {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo para campos de senha */
+  input[type="password"] {
+    width: 48%;
+    margin-right: 2%;
+    border-radius: 5px;
+  }
+  
+</style>
+<body>
+
+    <div class="divlogo">
+        <a href="/">
+          <img src="IMAGENS/logo.png" class="logo">
+        </a>
+      </div>
+      
+
+      <div id="cadastro" class="submenu">  
+        <form action="/Cadastro" method="post" class="formulario" id="formCadastro">
+
+          <h1> CRIE UMA CONTA MÉDICA </h1>
+
+  <label for="nomeCompleto">Nome Completo:</label>
+  <input placeholder="Ex: João da Silva" oninput="validarNomeCompleto(this)" type="text" name="nomecompleto" id="nomecompleto" required><br><br>
+
+  <label for="email">Email:</label>
+  <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email" required><br><br>
+
+  <label for="cpf">CPF:</label>
+  <input maxlength="14" placeholder="000.000.000-00" oninput="formatarCPF(this)" type="text" name="cpf" id="cpf" required><br><br>
+
+
+  <label for="dataNascimento">Data de Nascimento:</label>
+  <input placeholder="Data de nascimento ex.: 11/05/1980" type="date" name="datanascimento" id="datanascimento" required><br><br>
+
+  <label for="sexo">Selecione o Sexo que se identifica:</label>
+  <select placeholder="Sexo" type="text" name="sexo" id="sexo" required>
+    <option value="" disabled selected>Selecione o Sexo</option>
+    <option value="masculino">Masculino</option>
+    <option value="feminino">Feminino</option>
+    <option value="transgenero">Transgênero</option>
+    <option value="agenero">Agênero</option>
+    <option value="outro">Outro</option>
+  </select><br><br>
+
+  <input placeholder="Nome de Usuário" type="text" name="username" id="username" required><br><br>
+
+  <label for="senha">Senha:</label>
+  <input placeholder="Digite sua Senha" type="password" name="password" id="password" pattern="^{8,}$" required title="Mínimo, 8 caracteres."required><br><br>
+
+  <label for="tipo">Selecione o tipo</label>
+  <select placeholder="Tipo" type="text" name="tipo" id="tipo" required>
+    <option value="" disabled selected>Selecione o tipo de usuário</option>
+    <option value="Administrador">Administrador</option>
+    <option value="Medico">Médico</option>
+    <option value="Usuário">Usuário comum</option>
+  </select><br><br>
+
+  <button type="submit" class="Cadastro" >Cadastrar</button>
+</form>
+      </div>
+
+<script>
+  function formatarCPF(input) {
+                    let cpfLimpo = input.value.replace(/\D/g, "");
+                    
+                    if (cpfLimpo.length > 11) {
+                        cpfLimpo = cpfLimpo.substring(0, 11);
+                    }
+            
+                    let cpfFormatado = "";
+            
+                    if (cpfLimpo.length <= 3) {
+                        cpfFormatado = cpfLimpo;
+                    } else if (cpfLimpo.length <= 6) {
+                        cpfFormatado = cpfLimpo.replace(/(\d{3})(\d{0,3})/, "$1.$2");
+                    } else if (cpfLimpo.length <= 9) {
+                        cpfFormatado = cpfLimpo.replace(/(\d{3})(\d{3})(\d{0,3})/, "$1.$2.$3");
+                    } else {
+                        cpfFormatado = cpfLimpo.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
+                    }
+            
+                    input.value = cpfFormatado;
+            
+                    if (cpfLimpo.length >= 11) {
+                        input.setCustomValidity(""); // CPF completo, sem erro de validação
+                    } else {
+                        input.setCustomValidity("Informe um CPF válido com 11 dígitos"); // Mensagem de erro de validação
+                    }
+                }
+
+
+                function validarNomeCompleto(input) {
+                    const nome = input.value;
+                    
+                    // Verificar se o nome contém apenas letras (a-zA-Z) e pelo menos um espaço em branco
+                    const regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        
+                    if (!regex.test(nome)) {
+                        // Nome completo inválido
+                        input.setCustomValidity("Por favor, insira um nome completo válido contendo apenas letras e pelo menos um espaço.");
+                    } else {
+                        // Nome completo válido
+                        input.setCustomValidity("");
+                    }
+                }
+
+
+                function validarEmail(input) {
+    const email = input.value;
+
+    // Expressão regular para validar o formato de email
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (regex.test(email)) {
+        input.setCustomValidity(""); // Email válido, sem erro de validação
+    } else {
+        input.setCustomValidity("Informe um email válido"); // Mensagem de erro de validação
+    }
+}
+
+function validarSenha(input) {
+                const senha = document.getElementById("senha").value;
+                const confirmarSenha = document.getElementById("confirmarSenha").value;
+            
+                if (senha === confirmarSenha) {
+                    document.getElementById("senha").setCustomValidity(""); // Senhas iguais, sem erro de validação
+                    document.getElementById("confirmarSenha").setCustomValidity(""); // Senhas iguais, sem erro de validação
+                } else {
+                    document.getElementById("senha").setCustomValidity("As senhas não coincidem"); // Mensagem de erro de validação para a senha
+                    document.getElementById("confirmarSenha").setCustomValidity("As senhas não coincidem"); // Mensagem de erro de validação para a confirmação de senha
+                }
+            }
+</script>
+</body>
+
+</html>

@@ -33,14 +33,32 @@ saveUninitialized: true,
 app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static(__dirname + '/assets'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(__dirname + '/admin-pages'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // Configurar EJS como o motor de visualização
 app.set('view engine', 'ejs');
+
 // Rota para a página de login
 app.get('/', (req, res) => {
 res.render('index');
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/'));
 });
+
+//app.get('/tables', (req, res) => {
+  // Consulta para selecionar todos os registros da tabela
+  //connection.query('SELECT * FROM consultas', (error, results) => {
+  //  if (error) {
+   //   console.error('Erro ao executar a consulta:', error);
+  //  } else {
+   //   res.render('indexadmin', { rows: results });
+   // }
+ // });
+// });
 
 app.get('/login', (req, res) => {
     res.render('login'); // Renders views/login.ejs
@@ -87,6 +105,10 @@ app.get('/agendamento', (req, res) => {
   res.render('agendamento');
 });
 
+app.get('/indexadmin', (req, res) => {
+  res.render('indexadmin');
+});
+
 app.post('/agendamento', (req, res) => {
 const {username, date, horario, medico, informacoesamais} = req.body;
   
@@ -119,6 +141,24 @@ app.get('/Cadastro', (req, res) => {
     });
   });
   
+  app.get('/register', (req, res) => {
+    res.render('register');
+  });
+  
+  app.post('/register', (req, res) => {
+    const {nomecompleto, cpf, datanascimento, sexo, username, password, email, tipo} = req.body;
+  
+    const query = 'INSERT INTO users (nomecompleto, cpf, datanascimento, sexo, username, password, email, tipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    db.query(query, [nomecompleto, cpf, datanascimento, sexo, username, password, email, tipo], (err, results) => {
+      if (err) {
+        console.error('Erro ao inserir usuário:', err);
+        res.send('Erro ao cadastrar o usuário.');
+      } else {
+        res.send('SP-Medical-Group agradece por sua escolha <a href="/register">Volte para página de admin</a>');
+      }
+    });
+  });
+
 app.listen(5321, () => {
 console.log('Servidor rodando na porta 5321');
 });
