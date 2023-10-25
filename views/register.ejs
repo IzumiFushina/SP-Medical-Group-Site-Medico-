@@ -12,7 +12,7 @@
 <style>
     /* Estilo global para o corpo da página */
 html {
-  height: 115%;
+  height: 120%;
   
 }
 
@@ -22,14 +22,16 @@ body {
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
 }
   
-  /* editar logo */
 
-  .logo{
-    width: auto; /* Define a largura da imagem como automática */
-  height: auto; /* Define a altura da imagem como automática */
-  align-self: center; /* Centraliza verticalmente a imagem dentro da div */
-  
+header {
+  background-color: white;
+  height: 112px;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
 }
+
+  /* editar logo */
   
 
   .divlogo{
@@ -37,8 +39,7 @@ body {
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
     height: 120px; /* Torna a div do tamanho da janela de visualização */
-  padding: 20px;
-
+    margin-top: 0%;
   }
 
   
@@ -50,11 +51,14 @@ body {
     border-radius: 50px;
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    margin-top: 3%;
+    padding: 20PX;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    
     
       width: 700px; /* Define a largura do container */
-      height: 725px; /* Define a altura do container */
+      height: 820px; /* Define a altura do container */
     
     
   }
@@ -196,18 +200,18 @@ body {
   
 </style>
 <body>
-
+<header>
     <div class="divlogo">
         <a href="/">
           <img src="IMAGENS/logo.png" class="logo">
         </a>
       </div>
-      
+    </header>
 
       <div id="cadastro" class="submenu">  
         <form action="/register" method="post" class="formulario" id="formCadastro">
 
-          <h1> CRIE UMA CONTA MÉDICA </h1>
+          <h1> CRIE UM USUÁRIO </h1>
 
   <label for="nomeCompleto">Nome Completo:</label>
   <input placeholder="Ex: João da Silva" oninput="validarNomeCompleto(this)" type="text" name="nomecompleto" id="nomecompleto" required><br><br>

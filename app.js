@@ -66,33 +66,43 @@ app.get('/login', (req, res) => {
 // Rota para processar o formulário de login
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
-  
+ 
   const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
   
   db.query(query, [username, password], (err, results) => {
-  if (err) throw err;
+    if (err) throw err;
   
-  if (results.length > 0) {
-  req.session.loggedin = true;
-  req.session.name = username;
-  res.redirect('/agendamento');
-  } else {
-  res.send('Credenciais incorretas. <a href="/">Tente novamente</a>');
-  }
-  });
-  });
+    if (results.length > 0) {
+      // Autenticação bem-sucedida
+      req.session.loggedin = true;
+      req.session.name = username;
 
-// Rota para a página do painel
-app.get('/dashboard', (req, res) => {
-
-if (req.session.loggedin) {
-res.send(`Bem-vindo, ${req.session.username}!<br><a href="/agendamento">Entrar na sua página</a><br><a href="/logout">Sair</a>`);
-res.sendFile(__dirname + 'view/index');
-app.use(express.static(__dirname + '/IMAGENS'));
-} else {
-res.send('Faça login para acessar esta página. <a href="/">Login</a>');
-}
+      // Verifique o tipo de usuário
+      const tipoUsuario = results[0].tipo;
+      
+      if (tipoUsuario === 'NULL') {
+           console.log("Usuario Logado");
+        res.redirect('/agendamento');
+      } else if (tipoUsuario === 'medico') {
+       console.log("Usuario Logado");
+        res.send('Voce foi logado!');
+      } else if (tipoUsuario === 'Administrador') {
+console.log("Usuario Logado");
+        res.redirect('/indexadmin');
+      } else {
+        // Tratamento para outros tipos de usuário ou tipo desconhecido
+        res.send('Tipo de usuário desconhecido. <a href="/">Tente novamente</a>');
+      }
+    } else {
+      // Credenciais incorretas
+      res.send('Credenciais incorretas. <a href="/">Tente novamente</a>');
+    }
+  });
 });
+
+
+//Bagulho do Bootstrap
+
 
 // Rota para fazer logout
 app.get('/logout', (req, res) => {

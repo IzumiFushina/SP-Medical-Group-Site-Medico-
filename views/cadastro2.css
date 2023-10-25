@@ -1,8 +1,10 @@
 /* Estilo global para o corpo da página */
 html {
-  height: 110%;
-  
+  height: 105%;
+  align-items: center;
+  text-align: center;
 }
+
 
 * 
 body {
@@ -10,6 +12,13 @@ body {
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
 }
   
+header {
+  background-color: white;
+  height: 115px;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+}
   /* editar logo */
 
   .logo{
@@ -25,8 +34,7 @@ body {
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
     height: 120px; /* Torna a div do tamanho da janela de visualização */
-  padding: 20px;
-
+    margin-top: 0%;
   }
 
   
@@ -37,9 +45,11 @@ body {
     background-color: #ffffff;
     border-radius: 50px;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0% auto;
+    margin-top: 2%;
     padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    align-items: center;
     
       width: 700px; /* Define a largura do container */
       height: 725px; /* Define a altura do container */
@@ -90,13 +100,7 @@ body {
     border-radius: 3px;
   }
 
-  #password{
-    width: 90%;
-    padding: 15px;
-    margin-top: 5px;
-    border: 1px solid #000000;
-    border-radius: 3px;
-  }
+
 
   #confirmarSenha{
     width: 90%;
@@ -136,8 +140,6 @@ body {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     
-      position: relative;
-      left: 170px; /* Move o botão 10px para a direita */
     
 
     
@@ -168,9 +170,4 @@ body {
   }
   
   /* Estilo para campos de senha */
-  input[type="password"] {
-    width: 48%;
-    margin-right: 2%;
-    border-radius: 5px;
-  }
   
