@@ -154,7 +154,7 @@ app.get('/Cadastro', (req, res) => {
         console.error('Erro ao inserir usuário:', err);
         res.send('Erro ao cadastrar o usuário.');
       } else {
-        res.send('SP-Medical-Group agradece por sua escolha <a href="/register">Volte para página de admin</a>');
+        res.send('SP-Medical-Group agradece por sua escolha <a href="/indexadmin">Volte para página de admin</a>');
       }
     });
   });

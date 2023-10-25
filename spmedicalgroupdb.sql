@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 18/10/2023 às 16:03
+-- Tempo de geração: 25/10/2023 às 07:32
 -- Versão do servidor: 10.6.12-MariaDB-0ubuntu0.22.04.1
 -- Versão do PHP: 8.1.2-1ubuntu2.14
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `consultas`
+--
+
+CREATE TABLE `consultas` (
+  `username` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `horario` varchar(6) NOT NULL,
+  `medico` varchar(255) NOT NULL,
+  `informacoesamais` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `consultas`
+--
+
+INSERT INTO `consultas` (`username`, `date`, `horario`, `medico`, `informacoesamais`) VALUES
+('Marcos', '2023-10-02', '21:03', 'Dr. João da Silva', '3e');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `users`
 --
 
@@ -31,25 +52,22 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `cpf` varchar(11) DEFAULT NULL,
+  `cpf` varchar(20) DEFAULT NULL,
   `nomecompleto` varchar(255) DEFAULT NULL,
   `sexo` varchar(100) DEFAULT NULL,
-  `datanascimento` varchar(12) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL
+  `datanascimento` varchar(15) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `tipo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `cpf`, `nomecompleto`, `sexo`, `datanascimento`, `email`) VALUES
-(2, 'GuiVeiga', '12345', '34353533912', 'Guilherme Vegas', 'Masculino', '11/05/1980', 'email'),
-(3, 'atonio', '12', '12345678910', 'Marcos Veiga', 'Masculino', '01/10/27', NULL),
-(4, 'GatoComunista', '12345', '12345678912', 'João Texeira', 'Masculino', '13/01/2007', NULL),
-(5, 'Guilherme', '12345', '34353533912', 'Pedromilo', 'Masculino', '11/05/1980', 'rgrgrtgtff'),
-(8, 'Gui345', '12345', '34353533912', 'Guilherme Vegas', 'Masculino', '13/01/2007', 'sgdsdddsds'),
-(9, 'Gui345', '12345', '34353533912', 'Guilherme Vegas', 'Masculino', '13/01/2007', 'sgdsdddsds'),
-(10, 'ddd', '1', '34353533912', 'Guilherme Vegas', 'Masculino', '11/05/1980', 'feregdrg');
+INSERT INTO `users` (`id`, `username`, `password`, `cpf`, `nomecompleto`, `sexo`, `datanascimento`, `email`, `tipo`) VALUES
+(2, 'GuiVeiga', '12345', '34353533912', 'Guilherme Vegas', 'Masculino', '11/05/1980', 'email', 'user'),
+(13, 'Guilherme', '12345', '12345678901', 'Guilherme Veig', 'Masculino', '11/05/1942', 'email@gmail.com', 'Administrador'),
+(14, 'Veiga', '123', '131.423.432-34', 'dd g', 'masculino', '2023-10-10', 'e@e.com', 'Medico');
 
 --
 -- Índices para tabelas despejadas
@@ -69,7 +87,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
