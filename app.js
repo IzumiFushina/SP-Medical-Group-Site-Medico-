@@ -67,7 +67,7 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
  
-  const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
+  const query = 'SELECT * FROM users WHERE username = ? AND password = ? ';
   
   db.query(query, [username, password], (err, results) => {
     if (err) throw err;
@@ -80,15 +80,21 @@ app.post('/login', (req, res) => {
       // Verifique o tipo de usuário
       const tipoUsuario = results[0].tipo;
       
-      if (tipoUsuario === 'NULL') {
+      if (tipoUsuario === 'user') {
            console.log("Usuario Logado");
-        res.redirect('/agendamento');
-      } else if (tipoUsuario === 'medico') {
+        res.send('Voce foi logado com sucesso!<a href="/agendamento"> Entre na sua página</a>')
+        req.session.loggedin = true;
+        req.session.name = username;
+      } else if (tipoUsuario === 'Medico') {
        console.log("Usuario Logado");
-        res.send('Voce foi logado!');
+       res.send('Voce foi logado com sucesso!<a href="/medicopage"> Entre na sua página</a>')
+       req.session.loggedin = true;
+       req.session.name = username;
       } else if (tipoUsuario === 'Administrador') {
 console.log("Usuario Logado");
-        res.redirect('/indexadmin');
+        res.send('Voce foi logado com sucesso!<a href="/indexadmin"> Entre na sua página</a>')
+        req.session.loggedin = true;
+        req.session.name = username;
       } else {
         // Tratamento para outros tipos de usuário ou tipo desconhecido
         res.send('Tipo de usuário desconhecido. <a href="/">Tente novamente</a>');
@@ -113,6 +119,10 @@ res.redirect('/');
 
 app.get('/agendamento', (req, res) => {
   res.render('agendamento');
+});
+
+app.get('/medicopage', (req, res) => {
+  res.render('medicopage');
 });
 
 app.get('/indexadmin', (req, res) => {
@@ -140,7 +150,7 @@ app.get('/Cadastro', (req, res) => {
   app.post('/Cadastro', (req, res) => {
     const {nomecompleto, cpf, datanascimento, sexo, username, password, email} = req.body;
   
-    const query = 'INSERT INTO users (nomecompleto, cpf, datanascimento, sexo, username, password, email) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    const query = 'INSERT INTO users (nomecompleto, cpf, datanascimento, sexo, username, password, email, tipo) VALUES (?, ?, ?, ?, ?, ?, ?, "user")';
     db.query(query, [nomecompleto, cpf, datanascimento, sexo, username, password, email], (err, results) => {
       if (err) {
         console.error('Erro ao inserir usuário:', err);
