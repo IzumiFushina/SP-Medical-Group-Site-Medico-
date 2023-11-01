@@ -123,31 +123,21 @@
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
-                                    <tr>
-                                        <tr>
-                                            <th>Username</th>
-                                            <th>Data</th>
-                                            <th>Horário</th>
-                                            <th>Médico</th>
-                                            <th>Informações Adicionais</th>
-                                        </tr>
+                                    <% consultas.forEach(user => { %>
+                                        <li>
+                                          <strong><%= consultas.name %></strong> (<%= consultas.username.date.horario.medico.informacoesamais %>)
+                                          <a href="/update/<%= consultas.username %>">Nome completo</a>
+                                          <a href="/delete/<%= consultas.date %>">Data</a>
+                                          <a href="/delete/<%= consultas.horario %>">Horário</a>
+                                          <a href="/delete/<%= consultas.medico %>">Médico</a>
+                                          <a href="/delete/<%= consultas.informacoesamais %>">Informações a mais</a>
+                                        </li>
+                                      <% }); %>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                            <div>
-                                <a href="assets/admin-pages/#">Privacy Policy</a>
-                                &middot;
-                                <a href="assets/admin-pages/#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

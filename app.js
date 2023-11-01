@@ -126,7 +126,10 @@ app.get('/medicopage', (req, res) => {
 });
 
 app.get('/indexadmin', (req, res) => {
-  res.render('indexadmin');
+  db.query('SELECT * FROM consultas', (err, result) => {
+    if (err) throw err;
+    res.render('indexadmin', { consultas: result });
+  });
 });
 
 app.post('/agendamento', (req, res) => {

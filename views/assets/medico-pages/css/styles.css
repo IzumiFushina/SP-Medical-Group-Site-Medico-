@@ -78,7 +78,10 @@
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
-
+.divlogo {
+  width: 10px;
+  height: 10px;
+}
 *,
 *::before,
 *::after {
