@@ -123,16 +123,25 @@
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
-                                    <% consultas.forEach(user => { %>
-                                        <li>
-                                          <strong><%= consultas.name %></strong> (<%= consultas.username.date.horario.medico.informacoesamais %>)
-                                          <a href="/update/<%= consultas.username %>">Nome completo</a>
-                                          <a href="/delete/<%= consultas.date %>">Data</a>
-                                          <a href="/delete/<%= consultas.horario %>">Horário</a>
-                                          <a href="/delete/<%= consultas.medico %>">Médico</a>
-                                          <a href="/delete/<%= consultas.informacoesamais %>">Informações a mais</a>
-                                        </li>
-                                      <% }); %>
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Data</th>
+                                            <th>Horário</th>
+                                            <th>Médico</th>
+                                            <th>Informações a mais</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <ul>
+                                        <% consultas.forEach(consultas => { %>
+                                          <table>
+                                            <td><%= consultas.username %></td><td><%= consultas.date %></td><td><%= consultas.horario %></td><td><%= consultas.informacoesamais %></td> 
+                                            
+                                          </table>
+                                        <% }); %>
+                                      </ul>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

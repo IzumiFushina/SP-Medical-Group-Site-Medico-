@@ -130,7 +130,7 @@ app.get('/indexadmin', (req, res) => {
     if (err) throw err;
     res.render('indexadmin', { consultas: result });
   });
-});
+  });
 
 app.post('/agendamento', (req, res) => {
 const {username, date, horario, medico, informacoesamais} = req.body;
@@ -181,6 +181,8 @@ app.get('/Cadastro', (req, res) => {
       }
     });
   });
+
+
 
 app.listen(5321, () => {
 console.log('Servidor rodando na porta 5321');
