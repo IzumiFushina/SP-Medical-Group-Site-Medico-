@@ -130,6 +130,10 @@ app.get('/indexadmin', (req, res) => {
     if (err) throw err;
     res.render('indexadmin', { consultas: result });
   });
+  db.query('SELECT * FROM users', (err, result) => {
+    if (err) throw err;
+    res.render('indexadmin', { users: result });
+  });
   });
 
 app.post('/agendamento', (req, res) => {
