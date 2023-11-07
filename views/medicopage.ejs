@@ -67,7 +67,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Painel de Controle</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Tabela 'consultas'</li>
                         </ol>
@@ -79,20 +79,32 @@
                                 Informações referentes a agendamentos
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <tr>
+                                <table class="excel-table" id="datatablesSimple">
+                                    <thead>
                                         <tr>
-                                            <th>Username</th>
+                                            <th>Nome</th>
                                             <th>Data</th>
                                             <th>Horário</th>
                                             <th>Médico</th>
-                                            <th>Informações Adicionais</th>
+                                            <th>Informações a mais</th>
                                         </tr>
+                                    </thead>
+                                    <tbody>
+                                      <ul>
+                                        <% consultas.forEach(consultas => { %>
+                                          <table class="excel-table">
+                                            <td><%=consultas.username%></td><td><%=consultas.date%></td>
+                                            <td><%=consultas.horario%></td><td><%=consultas.medico%></td>
+                                            <td><%=consultas.informacoesamais%></td> 
+                                          </table>
+                                        <% }); %>
+                                      </ul>
+                                    </tbody>
                                 </table>
                             </div>
-                        </div>
                     </div>
-                </main>
+                </div>
+            </main>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

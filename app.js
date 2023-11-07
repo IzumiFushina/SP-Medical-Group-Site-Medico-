@@ -49,16 +49,6 @@ app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/'));
 });
 
-//app.get('/tables', (req, res) => {
-  // Consulta para selecionar todos os registros da tabela
-  //connection.query('SELECT * FROM consultas', (error, results) => {
-  //  if (error) {
-   //   console.error('Erro ao executar a consulta:', error);
-  //  } else {
-   //   res.render('indexadmin', { rows: results });
-   // }
- // });
-// });
 
 app.get('/login', (req, res) => {
     res.render('login'); // Renders views/login.ejs
@@ -122,7 +112,10 @@ app.get('/agendamento', (req, res) => {
 });
 
 app.get('/medicopage', (req, res) => {
-  res.render('medicopage');
+  db.query('SELECT * FROM consultas', (err, result) => {
+    if (err) throw err;
+    res.render('medicopage', { consultas: result });
+  });
 });
 
 app.get('/indexadmin', (req, res) => {
