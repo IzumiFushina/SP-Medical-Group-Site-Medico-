@@ -148,10 +148,10 @@ app.get('/Cadastro', (req, res) => {
   });
   
   app.post('/Cadastro', (req, res) => {
-    const {nomecompleto, cpf, datanascimento, sexo, username, password, email} = req.body;
+    const {username, cpf, datanascimento, sexo, password, email} = req.body;
   
-    const query = 'INSERT INTO users (nomecompleto, cpf, datanascimento, sexo, username, password, email, tipo) VALUES (?, ?, ?, ?, ?, ?, ?, "user")';
-    db.query(query, [nomecompleto, cpf, datanascimento, sexo, username, password, email], (err, results) => {
+    const query = 'INSERT INTO users (username, cpf, datanascimento, sexo, password, email, tipo) VALUES (?, ?, ?, ?, ?, ?, "user")';
+    db.query(query, [username, cpf, datanascimento, sexo, password, email], (err, results) => {
       if (err) {
         console.error('Erro ao inserir usuário:', err);
         res.send('Erro ao cadastrar o usuário.');
@@ -166,10 +166,10 @@ app.get('/Cadastro', (req, res) => {
   });
   
   app.post('/register', (req, res) => {
-    const {nomecompleto, cpf, datanascimento, sexo, username, password, email, tipo} = req.body;
+    const {username, cpf, datanascimento, sexo, password, email, tipo} = req.body;
   
-    const query = 'INSERT INTO users (nomecompleto, cpf, datanascimento, sexo, username, password, email, tipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
-    db.query(query, [nomecompleto, cpf, datanascimento, sexo, username, password, email, tipo], (err, results) => {
+    const query = 'INSERT INTO users (username, cpf, datanascimento, sexo, password, email, tipo) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    db.query(query, [username, cpf, datanascimento, sexo, password, email, tipo], (err, results) => {
       if (err) {
         console.error('Erro ao inserir usuário:', err);
         res.send('Erro ao cadastrar o usuário.');
@@ -181,6 +181,6 @@ app.get('/Cadastro', (req, res) => {
 
 
 
-app.listen(5321, () => {
-console.log('Servidor rodando na porta 5321');
+app.listen(8321, () => {
+console.log('Servidor rodando na porta 8321');
 });

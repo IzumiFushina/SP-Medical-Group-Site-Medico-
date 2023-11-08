@@ -23,7 +23,7 @@
           <h1> CRIE SUA CONTA </h1>
 
   <label for="nomeCompleto">Nome Completo:</label>
-  <input placeholder="Ex: João da Silva" oninput="validarNomeCompleto(this)" type="text" name="nomecompleto" id="nomecompleto" required><br><br>
+  <input placeholder="Ex: João da Silva" oninput="validarNomeCompleto(this)" type="text" name="username" id="username" required><br><br>
 
   <label for="email">Email:</label>
   <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email" required><br><br>
@@ -38,14 +38,10 @@
   <label for="sexo">Selecione o Sexo que se identifica:</label>
   <select placeholder="Sexo" type="text" name="sexo" id="sexo" required>
     <option value="" disabled selected>Selecione o Sexo</option>
-    <option value="masculino">Masculino</option>
-    <option value="feminino">Feminino</option>
-    <option value="transgenero">Transgênero</option>
-    <option value="agenero">Agênero</option>
-    <option value="outro">Outro</option>
+    <option value="Masculino">Masculino</option>
+    <option value="Feminino">Feminino</option>
+    <option value="N/A">Prefiro não me identificar</option>
   </select><br><br>
-
-  <input placeholder="Nome de Usuário" type="text" name="username" id="username" required><br><br>
 
   <label for="senha">Senha:</label>
   <input placeholder="Digite sua Senha" type="password" name="password" id="password" pattern="^{8,}$" required title="Mínimo, 8 caracteres."required><br><br>
