@@ -1,0 +1,78 @@
+06/10/2023 
+Temos grande parte do html finalizada e temos os conceitos acerca de front e back -end já atualizados.
+Agora deveríamos realizar um reunião (Daily) e dividir as tarefas entre os integrantes, vale a pena revisar todo o site enquanto a reunião é realizada e cada integrante se ingressar na área que mais tem afinidade, otimizando muito o trabalho.
+Como um site de clínica médica, os conceitos para a criação do site se basearam na facilidade e agilidade de acesso a fim de englobar todo tipo de pessoas.
+O resumo da divisão de tarefas da Daily:
+FRONT (Eduardo, Stefany, Marcos);
+BACK (Gustavo e Guilherme);
+Maykon vai fazer o Kanban;
+-----------------
+Páginas que devem ser feitas:
+◈ Agende sua consulta;
+◈ Contate-nos;
+O restante conferir no FIGMA.
+
+Páginas que devem ser conferidas:
+◈ Todas que são áreas específicas.
+----------------------
+Frameworks a serem utilizadas:
+Ainda decidindo
+
+07/10/2023
+Gustavo começou a programar a página de contatos, adicionando um mapa com a possível localização da clínica.
+Algumas configurações a mais foram feitas no Briefing.
+
+11/10/2023
+Gustavo atualizou o Briefing e construiu um modelo de baixa fidelidade para a primeira impressão do site, também continou configurando a página de contatos. Iniciou o Kanban e verificou certas coisas no banco de dados.
+Guilherme continuou configurando as páginas, banco de dados e o contato entre eles.
+O restante se tomou de tarefas básicas como a verificação das páginas e seu CSS.
+
+18/10/2023
+Analisando a nossa versão do site atual com sites médicos renomados, percebemos que ele não trazia uma sensação de profissionalismo, por ter sido a primeira versão logo no início do projeto.
+Decidimos, portanto, alterar o layout do site médico, verificando templates existentes e alternando entre o de nossa autoria com um disponível online, a fim de trazer mais profissionalismo, comodidade e facilidade aos usuários.
+Se baseará em uma tela Home com profusas funcionalidades, a fim de reduzir e excluir algumas páginas antigas do projeto.
+Como mudança principal, as páginas de especialidades, como cardiologia e odontologia, serão transformadas em uma pequena área da própria Home, isso ainda está em observação.
+
+20/10/2023
+Fizemos a troca de códigos do trabalho com outros grupos, a fim de tentar resolver pendências nos trabalhos uns dos outros, nosso trabalho foi para as mãos do grupo de Paulo e Isabella, honestamente, confiamos neles para lidar com nosso tabalho no geral. E boa sorte para eles.
+Em contraposição, a sorte nos deu o trabalho de Pedro para analisarmos e melhorarmos, além de resolver as pendÊncias que foram pontuadas por ele.
+Como recentemente mudamos completamente o layout do nosso site, deixar o grupo inteiro em foco em outro trabalho além do nosso poderia nos prejudicar conformo o prazo iria se encerrando. Por isso, dividimos o grupo em certos grupos em que, uns ficariam completamente ligados ao nosso Medical Group, enquanto outros focariam em revisar o código do outro grupo.
+
+25/10/2023
+Ainda continuamos a revisar o código do outro grupo, Guilherme e Marcos ficariam centrados no código dele, enquanto o restante do grupo se dividiriam para revisar o Medical Group.
+Gustavo iniciou a apresentação de trilha do Medical Group, para atualizar os clientes (Professores) de como estava indo nosso trabalho, também criou outra apresentação para apresentar as mudanças feitas no código do outro grupo.
+
+27/10/2023
+Apenas continuamos as produções.
+Como o Layout do site foi alterado, as seguintes alterações nos arquivos estão pendentes:
+◈ Alterar a UI de baixa fidelidade;
+◈ Fazer alterações na UI de alta fidelidade, para facilitar na alteração do CSS do site;
+◈ Alterar o Briefing e atualizar as questões de Layout e ferramentas utilizadas.
+
+01/11/2023
+Não houve nada muito fora do normal, continuamos as produções e criamos uma trilha de produção do trabalho de análise do projeto de outro grupo, a trilha se baseou em:
+◈ Iniciar com uma Daily;
+◈ Questionar o grupo Health Care para coletar informações;
+◈ Dividir as tarefas;
+◈ Iniciar as alterações nos arquivos;
+◈ Devolutiva dos arquivos já atualizados;
+◈ Recomendações de melhorias que podem ser realizadas pelo grupo Health Care.
+-----------------
+As seguintes tarefas ainda estão pendentes:
+◈ Alterar a UI de baixa fidelidade;
+◈ Fazer alterações na UI de alta fidelidade, para facilitar na alteração do CSS do site;
+◈ Alterar o Briefing e atualizar as questões de Layout e ferramentas utilizadas.
+
+08/11/2023
+Apresentamos as alterações no trabalho do outro grupo, e recebemos as alterações que foram feitas no nosso.
+Voltamos todos os olhos para o nosso site, agora já na reta final do projeto.
+As seguintes tarefas ainda estão pendentes:
+◈ Alterar a UI de baixa fidelidade;
+◈ Fazer alterações na UI de alta fidelidade, para facilitar na alteração do CSS do site;
+◈ Alterar o Briefing e atualizar as questões de Layout e ferramentas utilizadas;
+◈ Fazer alterações na Home Page;
+◈ Continuar a apresentação;
+◈ Atualizar o Kanban com as novas tarefas.
+
+10/11/2023
+Gustavo (Finalmente) atualizou o "Roteiro", agora chamado "Trilha de Produção", depois de um tempo.
