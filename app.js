@@ -14,13 +14,28 @@ password: '0z0x0c0v0b0n0m',
 database: 'spmedicalgroupdb',
 });
 
+const newDb = mysql.createConnection({
+  host: 'localhost',
+  user: 'phpmyadmin',
+  password: '0z0x0c0v0b0n0m',
+  database: 'spmedicalgroupdbB',
+});
+
 db.connect((err) => {
 if (err) {
-console.error('Erro ao conectar ao banco de dados:', err);
+console.error('Erro ao conectar ao banco de dados A:', err);
 throw err;
 }
-console.log('Conexão com o banco de dados MySQL estabelecida.');
+console.log('Conexão com o banco de dados A MySQL estabelecida.');
 });
+
+newDb.connect((err) => {
+  if (err) {
+  console.error('Erro ao conectar ao banco de dados B:', err);
+  throw err;
+  }
+  console.log('Conexão com o banco de dados B MySQL estabelecida.');
+  });
 
 // Configurar a sessão
 app.use(
@@ -59,7 +74,7 @@ app.post('/login', (req, res) => {
  
   const query = 'SELECT * FROM users WHERE username = ? AND password = ? ';
   
-  db.query(query, [username, password], (err, results) => {
+  newDb.query(query, [username, password], (err, results) => {
     if (err) throw err;
   
     if (results.length > 0) {
@@ -123,10 +138,11 @@ app.get('/indexadmin', (req, res) => {
     if (err) throw err;
     res.render('indexadmin', { consultas: result });
   });
-  db.query('SELECT * FROM users', (err, result) => {
+  newDb.query('SELECT * FROM users', (err, result) => {
     if (err) throw err;
     res.render('indexadmin', { users: result });
   });
+
   });
 
 app.post('/agendamento', (req, res) => {
