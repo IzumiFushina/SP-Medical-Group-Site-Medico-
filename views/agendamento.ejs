@@ -7,13 +7,14 @@
   <style>
     html {
   height: 100%;
-  
+  padding: 0px;
 }
     * 
     body {
       background: rgb(255, 255, 255);
       background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
       font-family: Arial, sans-serif;
+      padding: 0px;
     }
 
     .cabecalho {
@@ -30,14 +31,7 @@
       font-weight: bold;
     }
 
-    .container {
-      max-width: 400px;
-      margin: 20px auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
+
 
     h2 {
       text-align: center;
@@ -56,8 +50,9 @@
       color: #fff;
       padding: 10px 20px;
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      border-radius: 15px;
+      margin-top: 15px;
+      font-size: 15px;
     }
     header {
   background-color: white;
@@ -65,6 +60,7 @@
   align-items: center;
   text-align: center;
   max-width: 100%;
+  top: 0%;
 }
 .logo{
   display: inline-block;
@@ -78,18 +74,14 @@
   }
   .submenu {
     background-color: #ffffff;
-    border-radius: 50px;
-    max-width: 500px;
+    text-align: center;  
+    width: 500px; /* Define a largura do container */
+    height: 400px; /* Define a altura do container */
     margin: 0% auto;
-    margin-top: 2%;
     padding: 20px;
+    border-radius: 50px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    align-items: center;
-    
-      width: 700px; /* Define a largura do container */
-      height: 400px; /* Define a altura do container */
-    
-    
+    margin-top: 2%;
   }
   label {
     display: block;
@@ -101,17 +93,26 @@
   
   /* Estilo para os campos de entrada de texto */
   input[type="text"],
-  input[type="email"],
+  input[type="username"],
   input[type="time"],
   input[type="date"],
+  input[type="informacoesamais"] {
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 400px;
+    box-sizing: border-box;
+  }
   select {
-    width: 90%;
-    padding: 15px;
-    margin-top: 5px;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    font-family: 'Times New Roman';
-    
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 400px;
+    box-sizing: border-box;
   }
   </style>
 </head>
@@ -123,15 +124,15 @@
         </a>
       </div>
     </header>
-  <div class="container" class="submenu">
+  <div  class="submenu">
     <h2>Agendar Consulta Médica</h2>
     <form action="/agendamento" method="post" id="consultas"  >
 
-      <input placeholder="Nome completo" type="text" id="username" name="username" required>
+      <input placeholder="Nome completo" type="text" id="username" name="username" required><br>
 
-      <input placeholder="" type="date" id="date" name="date" required>
+      <input placeholder="" type="date" id="date" name="date" required><br>
 
-      <input placeholder="" type="time" id="horario" name="horario" required>
+      <input placeholder="" type="time" id="horario" name="horario" required><br>
 
       <select id="medico" name="medico" required>
         <option value="" >Selecione um médico</option> 
@@ -139,9 +140,9 @@
         <option value="Elizabeth Schimidt" >Elizabeth Schimidt</option> 
         <option value="Bonnie Fazbear" >Bonnie Fazbear</option>
         <option value="Milena Shokan">Milena Shokan</option>
-      </select>
+      </select><br>
 
-      <input placeholder="informações a mais" type="informacoesamais" id="informacoesamais" name="informacoesamais" required>
+      <input placeholder="informações a mais" type="informacoesamais" id="informacoesamais" name="informacoesamais" required><br>
 
       <button type="submit">Agendar</button>
     </form>
