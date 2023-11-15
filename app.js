@@ -14,28 +14,15 @@ password: '0z0x0c0v0b0n0m',
 database: 'spmedicalgroupdb',
 });
 
-const newDb = mysql.createConnection({
-  host: 'localhost',
-  user: 'phpmyadmin',
-  password: '0z0x0c0v0b0n0m',
-  database: 'spmedicalgroupdbB',
-});
 
 db.connect((err) => {
 if (err) {
-console.error('Erro ao conectar ao banco de dados A:', err);
+console.error('Erro ao conectar ao banco de dados:', err);
 throw err;
 }
-console.log('Conexão com o banco de dados A MySQL estabelecida.');
+console.log('Conexão com o banco de dados MySQL estabelecida.');
 });
 
-newDb.connect((err) => {
-  if (err) {
-  console.error('Erro ao conectar ao banco de dados B:', err);
-  throw err;
-  }
-  console.log('Conexão com o banco de dados B MySQL estabelecida.');
-  });
 
 // Configurar a sessão
 app.use(
@@ -74,7 +61,7 @@ app.post('/login', (req, res) => {
  
   const query = 'SELECT * FROM users WHERE username = ? AND password = ? ';
   
-  newDb.query(query, [username, password], (err, results) => {
+  db.query(query, [username, password], (err, results) => {
     if (err) throw err;
   
     if (results.length > 0) {
@@ -112,9 +99,6 @@ console.log("Usuario Logado");
 });
 
 
-//Bagulho do Bootstrap
-
-
 // Rota para fazer logout
 app.get('/logout', (req, res) => {
 req.session.destroy(() => {
@@ -134,11 +118,8 @@ app.get('/medicopage', (req, res) => {
 });
 
 app.get('/indexadmin', (req, res) => {
-  db.query('SELECT * FROM consultas', (err, result) => {
-    if (err) throw err;
-    res.render('indexadmin', { consultas: result });
-  });
-  newDb.query('SELECT * FROM users', (err, result) => {
+
+  db.query('SELECT * FROM users', (err, result) => {
     if (err) throw err;
     res.render('indexadmin', { users: result });
   });

@@ -4805,7 +4805,7 @@ textarea.form-control-lg {
   --bs-list-group-border-radius: 0.375rem;
   --bs-list-group-item-padding-x: 1rem;
   --bs-list-group-item-padding-y: 0.5rem;
-  --bs-list-group-action-color: #495057;
+  --bs-list-group-action-color: #385675;
   --bs-list-group-action-hover-color: #495057;
   --bs-list-group-action-hover-bg: #f8f9fa;
   --bs-list-group-action-active-color: #212529;
@@ -8178,7 +8178,7 @@ textarea.form-control-lg {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #51b3f1 !important;
 }
 
 .bg-black {
@@ -11017,10 +11017,10 @@ body {
   padding: 0.75rem;
   flex-shrink: 0;
 }
-
+ /*Cores para modificar o sidenav*/
 .sb-sidenav-dark {
-  background-color: #212529;
-  color: rgba(255, 255, 255, 0.5);
+  background-color: #51b3f1;
+  color: white;
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
   color: rgba(255, 255, 255, 0.25);
@@ -11044,7 +11044,7 @@ body {
   color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-footer {
-  background-color: #343a40;
+  background-color: #1991dd;
 }
 
 .sb-sidenav-light {
@@ -11270,5 +11270,36 @@ body {
 }
 
 .excel-table tr:hover {
+  background-color: #ddd;
+}
+
+.excel-tableB {
+  border-collapse: collapse;
+  width: 100%;
+  max-width:1500px;
+  margin: 0 auto;
+}
+
+.excel-tableB th [name="A"] {
+  border: 1px solid #000;
+  text-align: center;
+  width: 21.42%;
+}
+
+.excel-tableB td [name="A"] {
+  border: 1px solid #000;
+  text-align: center;
+  width: 21.42%;
+}
+
+.excel-tableB th {
+  background-color: #f2f2f2;
+}
+
+.excel-tableB tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.excel-tableB tr:hover {
   background-color: #ddd;
 }

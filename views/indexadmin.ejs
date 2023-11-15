@@ -134,13 +134,6 @@
                                     </thead>
                                     <tbody>
                                       <ul>
-                                        <% consultas.forEach(consultas => { %>
-                                          <table class="excel-table">
-                                            <td><%=consultas.username%></td><td><%=consultas.date%></td>
-                                            <td><%=consultas.horario%></td><td><%=consultas.medico%></td>
-                                            <td><%=consultas.informacoesamais%></td> 
-                                          </table>
-                                        <% }); %>
                                       </ul>
                                     </tbody>
                                 </table>
@@ -151,27 +144,25 @@
                                     Informações referentes aos usuários
                                 </div>
                                 <div class="card-body">
-                                    <table class="excel-table" id="datatablesSimple">
+                                    <table class="excel-tableB" id="datatablesSimple">
                                         <thead>
                                             <tr>
-                                                <th>Usuário</th>
-                                                <th>Senha</th>
-                                                <th>CPF</th>
-                                                <th>Nome Completo</th>
-                                                <th>Sexo</th>
-                                                <th>datanascimento</th>
-                                                <th>Email</th>
-                                                <th>Tipo</th>
+                                                <th name="A" >Usuário</th>
+                                                <th name="A" >Senha</th>
+                                                <th name="A" >CPF</th>
+                                                <th name="B" >Sexo</th>
+                                                <th name="B" >datanascimento</th>
+                                                <th name="A" >Email</th>
+                                                <th name="B" >Tipo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                           <ul>
                                             <% users.forEach(users => { %>
-                                              <table class="excel-table">
-                                                <td><%=users.username%></td><td><%=users.password%></td>
-                                                <td><%=users.cpf%></td><td><%=users.nomecompleto%></td>
-                                                <td><%=users.sexo%></td><td><%=users.datanascimento%></td> 
-                                                <td><%=users.email%></td><td><%=users.tipo%></td>  
+                                              <table class="excel-tableB">
+                                                <td><%=users.username%></td><td><%=users.password%></td><td><%=users.cpf%></td>
+                                                <td><%=users.sexo%></td><td><%=users.datanascimento%></td> <td><%=users.email%></td>
+                                                <td><%=users.tipo%></td>  
                                               </table>
                                             <% }); %>
                                           </ul>
