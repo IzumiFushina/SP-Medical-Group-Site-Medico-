@@ -49,8 +49,21 @@ app.get('/', (req, res) => {
 res.render('index');
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/'));
+
+
 });
 
+app.post('/', (req, res) => {
+  const query = 'INSERT INTO mensagens (NomeCompleto, Email, Assunto, Mensagem) VALUES (?, ?, ?, ?)';
+  db.query(query, [NomeCompleto, Email, Assunto, Mensagem], (err, results) => {
+    if (err) {
+      console.error('Erro ao mandar mensagem', err);
+      res.send('Erro ao mandar mensagem <a href="/index"> Voltar para a página de agendamento</a>.');
+    } else {
+      res.send('Sucesso ao mandar mensagem <a href="/index"> Voltar para a página de agendamento</a>');
+    }
+  });
+  });
 
 app.get('/login', (req, res) => {
     res.render('login'); // Renders views/login.ejs
@@ -118,7 +131,6 @@ app.get('/medicopage', (req, res) => {
 });
 
 app.get('/indexadmin', (req, res) => {
-
   db.query('SELECT * FROM users', (err, result) => {
     if (err) throw err;
     res.render('indexadmin', { users: result });
