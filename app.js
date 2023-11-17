@@ -72,7 +72,7 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
  
-  const query = 'SELECT * FROM users WHERE username = ? AND password = ? ';
+  const query = 'SELECT * FROM users WHERE username = ? AND password = SHA1(?) ';
   
   db.query(query, [username, password], (err, results) => {
     if (err) throw err;
@@ -159,7 +159,7 @@ app.get('/Cadastro', (req, res) => {
   app.post('/Cadastro', (req, res) => {
     const {username, cpf, datanascimento, sexo, password, email} = req.body;
   
-    const query = 'INSERT INTO users (username, cpf, datanascimento, sexo, password, email, tipo) VALUES (?, ?, ?, ?, ?, ?, "user")';
+    const query = 'INSERT INTO users (username, cpf, datanascimento, sexo, password, email, tipo) VALUES (?, ?, ?, ?, SHA1(?), ?, "user")';
     db.query(query, [username, cpf, datanascimento, sexo, password, email], (err, results) => {
       if (err) {
         console.error('Erro ao inserir usuário:', err);
@@ -177,7 +177,7 @@ app.get('/Cadastro', (req, res) => {
   app.post('/register', (req, res) => {
     const {username, cpf, datanascimento, sexo, password, email, tipo} = req.body;
   
-    const query = 'INSERT INTO users (username, cpf, datanascimento, sexo, password, email, tipo) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    const query = 'INSERT INTO users (username, cpf, datanascimento, sexo, password, email, tipo) VALUES (?, ?, ?, ?, SHA1(?), ?, ?)';
     db.query(query, [username, cpf, datanascimento, sexo, password, email, tipo], (err, results) => {
       if (err) {
         console.error('Erro ao inserir usuário:', err);
