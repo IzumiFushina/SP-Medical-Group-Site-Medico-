@@ -227,14 +227,12 @@ header {
   <label for="dataNascimento">Data de Nascimento:</label>
   <input placeholder="Data de nascimento ex.: 11/05/1980" type="date" name="datanascimento" id="datanascimento" required><br><br>
 
-  <label for="sexo">Selecione o Sexo que se identifica:</label>
+  <label for="sexo">Selecione o Sexo Biológico:</label>
   <select placeholder="Sexo" type="text" name="sexo" id="sexo" required>
     <option value="" disabled selected>Selecione o Sexo</option>
-    <option value="masculino">Masculino</option>
-    <option value="feminino">Feminino</option>
-    <option value="transgenero">Transgênero</option>
-    <option value="agenero">Agênero</option>
-    <option value="outro">Outro</option>
+    <option value="Masculino">Masculino</option>
+    <option value="Feminino">Feminino</option>
+    <option value="NaoInformado">Não informar</option>
   </select><br><br>
 
   <input placeholder="Nome de Usuário" type="text" name="username" id="username" required><br><br>
@@ -246,6 +244,7 @@ header {
   <select placeholder="Tipo" type="text" name="tipo" id="tipo" required>
     <option value="" disabled selected>Selecione o tipo de usuário</option>
     <option value="Administrador">Administrador</option>
+    <option value="Gestor">Gestor</option>
     <option value="Medico">Médico</option>
     <option value="Usuário">Usuário comum</option>
   </select><br><br>

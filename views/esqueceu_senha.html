@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>SP-Medical Group</title>
   <style>
     html {
       height: 100%;
@@ -86,3 +86,35 @@
 </body>
 
 </html>
+
+
+
+<div class="card mb-4">
+  <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      Informações referentes as mensagens
+  </div>
+  <div class="card-body">
+      <table class="excel-tableB" id="datatablesSimple">
+          <thead>
+              <tr>
+                  <th>Nome Completo</th>
+                  <th>E-mail</th>
+                  <th>Assunto</th>
+                  <th>Mensagem</th>
+              </tr>
+          </thead>
+          <tbody>
+            <ul>
+              <% mensagens.forEach(mensagens => { %>
+                <table class="excel-tableA">
+                  <td><%=mensagens.nomecompleto%></td>
+                  <td><%=mensagens.email%></td>
+                  <td><%=mensagens.assunto%></td>
+                  <td><%=mensagens.mensagem%></td><td> 
+                </table>
+              <% }); %>
+            </ul>
+          </tbody>
+      </table>
+  </div>
