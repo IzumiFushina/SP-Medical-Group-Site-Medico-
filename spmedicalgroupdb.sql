@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 21-Nov-2023 às 22:42
+-- Tempo de geração: 22-Nov-2023 às 11:00
 -- Versão do servidor: 8.0.35-0ubuntu0.22.04.1
 -- versão do PHP: 8.1.2-1ubuntu2.14
 
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `consultas` (
-  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `date` date NOT NULL,
-  `horario` varchar(6) COLLATE utf8mb4_general_ci NOT NULL,
-  `medico` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `informacoesamais` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+  `horario` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `medico` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `informacoesamais` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -90,11 +90,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `cpf`, `sexo`, `datanascimento`, `email`, `tipo`) VALUES
-(2, 'GuiVeiga', '12345', '123.123.123.45', 'Masculino', '11/05/1980', 'email', 'user'),
-(13, 'Guilherme', '12345', '000.000.000-29', 'Masculino', '11/05/1942', 'email@gmail.com', 'Administrador'),
-(21, 'Who', '123', '432.545.352-52', 'masculino', '1965-06-16', 'who@tardis.com', 'Medico'),
-(22, 'Arnaldo Fer', '123', '198.419.841-98', 'NaoInformado', '2023-11-03', 'arnaldogomes@gmail.com', 'user'),
-(23, 'Saul Goodman', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '132.234.244-44', 'Masculino', '2023-11-21', 'goodman@netflix.com', 'Gestor');
+(23, 'Saul Goodman', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '132.234.244-44', 'Masculino', '2023-11-21', 'goodman@netflix.com', 'Gestor'),
+(24, 'A A', '356a192b7913b04c54574d18c28d46e6395428ab', '423.534.536-54', 'Masculino', '0056-05-04', 'a@a.com', 'user'),
+(25, 'Admin A', '8bb6d4390779af92c05c5107b9f35cacd9004e0c', '235.346.356-45', 'NaoInformado', '34645-05-31', 'admin@gmail.com', 'Administrador');
 
 --
 -- Índices para tabelas despejadas
@@ -114,7 +112,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
