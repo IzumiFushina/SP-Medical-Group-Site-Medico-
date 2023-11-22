@@ -54,9 +54,9 @@ app.use(express.static(__dirname + '/'));
 });
 
 app.post('/index', (req, res) => {
-  const {nomecompleto, email, assunto, mensagem} = req.body;
-  const query = 'INSERT INTO mensagens (nomecompleto, email, assunto, mensagem) VALUES (?, ?, ?, ?)';
-  db.query(query, [nomecompleto, email, assunto, mensagem], (err, results) => {
+  const {nomecompleto, email, assunto, mensagem, telefone} = req.body;
+  const query = 'INSERT INTO mensagens (nomecompleto, email, assunto, mensagem, telefone) VALUES (?, ?, ?, ?, ?)';
+  db.query(query, [nomecompleto, email, assunto, mensagem, telefone], (err, results) => {
     if (err) {
       console.error('Erro ao mandar mensagem', err);
       res.send('Erro ao mandar mensagem <a href="/"> Voltar para a página principal</a>.');

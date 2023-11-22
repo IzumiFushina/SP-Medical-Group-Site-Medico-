@@ -10,24 +10,24 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="SP-Medical Group/assets/img/logoicon.png" rel="icon">
+  <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
  
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="SP-Medical Group/" rel="stylesheet">
-  <link href="SP-Medical Group/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="SP-Medical Group/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="SP-Medical Group/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="SP-Medical Group/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="SP-Medical Group/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="SP-Medical Group/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="SP-Medical Group/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/SP-Medical Group/" rel="stylesheet">
+  <link href="assets/SP-Medical Group/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/SP-Medical Group/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/SP-Medical Group/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/SP-Medical Group/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/SP-Medical Group/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/SP-Medical Group/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/SP-Medical Group/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="SP-Medical Group/assets/css/style.css" rel="stylesheet">
+  <link href="assets/SP-Medical Group/assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: SP-Medical Group
@@ -638,6 +638,9 @@
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Your email" required>
                 </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="tel" id="telefone" name="telefone" placeholder="+55 (Brasil)" pattern="\+\d{1,4} \d{1,14}" required>
+                </div>
               </div>
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="assunto" id="assunto" placeholder="Subject" required>
@@ -745,6 +748,19 @@
                 formClicado = true;
             }
         });
+
+
+        document.getElementById('telefone').addEventListener('blur', formatarCodigoPais);
+
+function formatarCodigoPais() {
+    const inputTelefone = document.getElementById('telefone');
+    const valorAtual = inputTelefone.value;
+
+    // Verificar se já possui o código do país, se não, adicionar automaticamente
+    if (!/^(\+\d{1,4} )/.test(valorAtual)) {
+        inputTelefone.value = '+55 ' + valorAtual;
+    }
+}
     </script>
 
 </body>

@@ -214,8 +214,8 @@ header {
 
           <h1> CRIE UM USUÁRIO </h1>
 
-  <label for="nomeCompleto">Nome Completo:</label>
-  <input placeholder="Ex: João da Silva" oninput="validarNomeCompleto(this)" type="text" name="nomecompleto" id="nomecompleto" required><br><br>
+  <label for="username">Nome Completo:</label>
+  <input placeholder="Ex: João da Silva" oninput="validarusername(this)" type="text" name="username" id="username" required><br><br>
 
   <label for="email">Email:</label>
   <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email" required><br><br>
@@ -234,8 +234,6 @@ header {
     <option value="Feminino">Feminino</option>
     <option value="NaoInformado">Não informar</option>
   </select><br><br>
-
-  <input placeholder="Nome de Usuário" type="text" name="username" id="username" required><br><br>
 
   <label for="senha">Senha:</label>
   <input placeholder="Digite sua Senha" type="password" name="password" id="password" pattern="^{8,}$" required title="Mínimo, 8 caracteres."required><br><br>
@@ -283,7 +281,7 @@ header {
                 }
 
 
-                function validarNomeCompleto(input) {
+                function validarusername(input) {
                     const nome = input.value;
                     
                     // Verificar se o nome contém apenas letras (a-zA-Z) e pelo menos um espaço em branco
