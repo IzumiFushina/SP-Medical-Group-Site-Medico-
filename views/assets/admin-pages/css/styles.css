@@ -11360,3 +11360,7 @@ body {
 .excel-tableB tr:hover {
   background-color: #ddd;
 }
+
+.consultas {
+  max-width: 2000px;
+}

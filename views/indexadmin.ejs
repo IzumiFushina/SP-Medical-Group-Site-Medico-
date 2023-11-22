@@ -15,10 +15,13 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="assets/admin-pages/index.html">Start Bootstrap</a>
+            <div class="navbar-brand ps-3"> <tbody>
+            
+            </tbody></div>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="assets/admin-pages/#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
+            
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
@@ -44,9 +47,9 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="assets/admin-pages/index.html">
+                            <a class="nav-link" href="http://localhost/phpmyadmin">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                phpMyAdmin
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link collapsed" href="assets/admin-pages/#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -56,7 +59,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="assets/admin-pages/layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="/assets/admin-pages/estaticas">Páginas estáticas</a>
                                     <a class="nav-link" href="assets/admin-pages/layout-sidenav-light.html">Light Sidenav</a>
                                 </nav>
                             </div>
@@ -76,17 +79,6 @@
                                             <a class="nav-link" href="assets/admin-pages/login.html">Login</a>
                                             <a class="nav-link" href="/register">Register</a>
                                             <a class="nav-link" href="assets/admin-pages/password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="assets/admin-pages/#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="assets/admin-pages/401.html">401 Page</a>
-                                            <a class="nav-link" href="assets/admin-pages/404.html">404 Page</a>
-                                            <a class="nav-link" href="assets/admin-pages/500.html">500 Page</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -113,32 +105,9 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Painel de Controle</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Tabela 'consultas'</li>
+                            <li class="breadcrumb-item active">Tabela 'users'</li>
                         </ol>
-
                         </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Informações referentes a agendamentos
-                            </div>
-                            <div class="card-body">
-                                <table class="excel-table" id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Nome</th>
-                                            <th>Data</th>
-                                            <th>Horário</th>
-                                            <th>Médico</th>
-                                            <th>Informações a mais</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                      <ul>
-                                      </ul>
-                                    </tbody>
-                                </table>
-                            </div>
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <i class="fas fa-table me-1"></i>
@@ -171,6 +140,14 @@
                                     </table>
                                 </div>
                         </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Informações referentes a agendamentos
+                            </div>
+                            <div class="card-body">
+                               <iframe width="1750px" height="1000px" class="consultas" src="medicopage"></iframe>
+                            </div>
                     </div>
                 </main>
             </div>

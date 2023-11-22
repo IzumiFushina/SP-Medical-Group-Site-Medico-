@@ -201,6 +201,9 @@ app.get('/Cadastro', (req, res) => {
     });
   });
 
+  app.get('/estaticas', (req, res) => {
+      res.render('estaticas');
+    });
 
 
 app.listen(8321, () => {

@@ -1031,7 +1031,12 @@ section {
   height: 44px;
 }
 
-
+#telefone {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  padding: 10px !important;
+}
 
 .form button{
   background: #51b3f1;
