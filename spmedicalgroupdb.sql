@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 22-Nov-2023 às 11:00
+-- Tempo de geração: 23-Nov-2023 às 21:21
 -- Versão do servidor: 8.0.35-0ubuntu0.22.04.1
 -- versão do PHP: 8.1.2-1ubuntu2.14
 
@@ -56,17 +56,6 @@ CREATE TABLE `mensagens` (
   `mensagem` varchar(255) NOT NULL,
   `telefone` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Extraindo dados da tabela `mensagens`
---
-
-INSERT INTO `mensagens` (`nomecompleto`, `email`, `assunto`, `mensagem`, `telefone`) VALUES
-('Grande Irmao', 'arnaldogomes@gmail.com', 'Assunto', 'fsafsdr', ''),
-('Grande Irmao', 'arnaldogomes@gmail.com', 'Assunto', 'fsafsdr', ''),
-('sfsd', 'arnaldogomes@gmail.com', 'Assunto', 'fsafsdr', ''),
-('Doctor Who', 'arnaldogomes@gmail.com', 'Assunto', 'fsafsdr', ''),
-('Kratos', 'kratos@olimpo.com', 'Queda do Olimpo', 'Baixo assinado contra Zeus', '+55 19981617025');
 
 -- --------------------------------------------------------
 
