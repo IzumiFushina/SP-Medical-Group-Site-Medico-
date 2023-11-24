@@ -59,7 +59,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/assets/admin-pages/estaticas">Páginas estáticas</a>
+                                    <a class="nav-link" href="/assets/admin-pages/estaticas.html">Páginas estáticas</a>
                                     <a class="nav-link" href="assets/admin-pages/layout-sidenav-light.html">Light Sidenav</a>
                                 </nav>
                             </div>
@@ -76,8 +76,8 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="assets/admin-pages/login.html">Login</a>
-                                            <a class="nav-link" href="/register">Register</a>
+                                            <a class="nav-link" onclick="abrirPopup()" >Login</a>
+                                            <a class="nav-link" href="/register">Cadastrar Usuário</a>
                                             <a class="nav-link" href="assets/admin-pages/password.html">Forgot Password</a>
                                         </nav>
                                     </div>
@@ -154,6 +154,11 @@
             
         </div>
          
+        <script>
+        function abrirPopup() {
+            // Abrir uma nova janela com a página EJS
+            window.open('login', 'NomeDaJanela', 'width=800,height=600');
+        }</script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
