@@ -732,37 +732,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script>
-        // Obtém o formulário pelo ID
-        const form = document.getElementById('form');
-
-        // Variável para rastrear se o formulário já foi clicado
-        let formClicado = false;
-
-        // Adiciona um listener de evento para o clique no formulário
-        form.addEventListener('click', function() {
-            // Verifica se o formulário ainda não foi clicado
-            if (!formClicado) {
-                // Exibe um alerta apenas no primeiro clique
-                Bootsrap.modal('Mande uma mensagem para nós!                                   Responderemos em até 48 horas via E-mail');
-                // Define a variável para indicar que o formulário já foi clicado
-                formClicado = true;
-            }
-        });
-
-
-        document.getElementById('telefone').addEventListener('blur', formatarCodigoPais);
-
-function formatarCodigoPais() {
-    const inputTelefone = document.getElementById('telefone');
-    const valorAtual = inputTelefone.value;
-
-    // Verificar se já possui o código do país, se não, adicionar automaticamente
-    if (!/^(\+\d{1,4} )/.test(valorAtual)) {
-        inputTelefone.value = '+55 ' + valorAtual;
-    }
-}
-    </script>
+  <script src="assets/js/functions.js" ></script>
 
 </body>
 
