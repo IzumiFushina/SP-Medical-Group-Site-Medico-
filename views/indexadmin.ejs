@@ -7,7 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
-        <link href="SP-Medical Group/assets/img/logoicon.png" rel="icon">
+        <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href= "assets/admin-pages/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -36,7 +36,7 @@
                         <li><a class="dropdown-item" href="assets/admin-pages/#!">Settings</a></li>
                         <li><a class="dropdown-item" href="assets/admin-pages/#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="/login">Logout</a></li>
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -81,15 +81,27 @@
                                         </nav>
                                     
                                 </nav>
+                            </div> 
+                            <div class="sb-sidenav-menu-heading">Formas de Contato</div>
+                            <a class="nav-link collapsed" href="assets/gestorpage/#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Plataformas
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="https://www.google.com/intl/pt-BR/gmail/about/">Gmail</a>
+                                    <a class="nav-link" href="https://web.whatsapp.com/">WhatsApp</a>
+                                </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <div class="sb-sidenav-menu-heading"></div>
                             <a class="nav-link" href="assets/admin-pages/charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
+                                <div class="sb-nav-link-icon"></div>
+                                
                             </a>
                             <a class="nav-link" href="assets/admin-pages/tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                                <div class="sb-nav-link-icon"></div>
+                                
                             </a>
                         </div>
                     </div>
@@ -145,7 +157,7 @@
                                 Informações referentes a agendamentos
                             </div>
                             <div class="card-body">
-                               <iframe width="1750px" height="1000px" class="consultas" src="medicopage"></iframe>
+                               <iframe width="1635px" height="1000px" class="consultas" src="medicopage"></iframe>
                             </div>
                     </div>
                     <div class="card mb-4">
@@ -154,7 +166,7 @@
                             Informações referentes a mensagens feitas
                         </div>
                         <div class="card-body">
-                           <iframe width="1750px" height="1000px" class="consultas" src="gestorpage"></iframe>
+                           <iframe width="1635px" height="1000px" class="consultas" src="gestorpage"></iframe>
                         </div>
                 </div>
                 </main>

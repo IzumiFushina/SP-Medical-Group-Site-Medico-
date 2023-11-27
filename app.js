@@ -126,32 +126,55 @@ res.redirect('/');
 });
 
 app.get('/agendamento', (req, res) => {
+  if (req.session.loggedin && req.session.name) {
   res.render('agendamento');
+
+} else {
+  // Se não estiver autenticado, redireciona para a página de login
+  res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
+}
 });
 
 app.get('/gestorpage', (req, res) => {
+  if (req.session.loggedin && req.session.name) {
   db.query('SELECT * FROM mensagens', (err, result) => {
     if (err) throw err;
     res.render('gestorpage', { mensagens: result });
   });
+} else {
+  // Se não estiver autenticado, redireciona para a página de login
+  res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
+}
 });
 
 app.get('/medicopage', (req, res) => {
+  if (req.session.loggedin && req.session.name) {
   db.query('SELECT * FROM consultas', (err, result) => {
     if (err) throw err;
     res.render('medicopage', { consultas: result });
   });
+} else {
+  // Se não estiver autenticado, redireciona para a página de login
+  res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
+}
 });
 
 app.get('/indexadmin', (req, res) => {
-  db.query('SELECT * FROM users', (err, result) => {
-    if (err) throw err;
-    res.render('indexadmin', { users: result });
-  });
-
-  });
+  // Verifica se o usuário está autenticado
+  if (req.session.loggedin && req.session.name) {
+    // Se estiver autenticado, consulta os usuários e renderiza a página
+    db.query('SELECT * FROM users', (err, result) => {
+      if (err) throw err;
+      res.render('indexadmin', { users: result });
+    });
+  } else {
+    // Se não estiver autenticado, redireciona para a página de login
+    res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
+  }
+});
 
 app.post('/agendamento', (req, res) => {
+  
 const {username, date, horario, medico, informacoesamais} = req.body;
   
 const query = 'INSERT INTO consultas (username, date, horario, medico, informacoesamais) VALUES (?, ?, ?, ?, ?)';
@@ -163,6 +186,7 @@ db.query(query, [username, date, horario, medico, informacoesamais], (err, resul
     res.send('Agendamento feito com sucesso <a href="/agendamento"> Voltar para a página de agendamento</a>');
   }
 });
+
 });
 
 app.get('/Cadastro', (req, res) => {
@@ -206,6 +230,6 @@ app.get('/Cadastro', (req, res) => {
     });
 
 
-app.listen(8321, () => {
-console.log('Servidor rodando na porta 8321');
+app.listen(5321, () => {
+console.log('Servidor rodando na porta 5321');
 });
