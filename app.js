@@ -103,7 +103,7 @@ app.post('/login', (req, res) => {
         req.session.name = username;
       } else if (tipoUsuario === 'Administrador') {
 console.log("Usuario Logado");
-        res.send('Voce foi logado com sucesso!<a href="/indexadmin"> Entre na sua página</a>')
+        res.redirect('/indexadmin')
         req.session.loggedin = true;
         req.session.name = username;
       } else {
@@ -165,7 +165,8 @@ app.get('/indexadmin', (req, res) => {
     // Se estiver autenticado, consulta os usuários e renderiza a página
     db.query('SELECT * FROM users', (err, result) => {
       if (err) throw err;
-      res.render('indexadmin', { users: result });
+      res.render('indexadmin', {req: req, users: result} );
+      console.log(req.session);
     });
   } else {
     // Se não estiver autenticado, redireciona para a página de login
