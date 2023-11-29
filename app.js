@@ -175,10 +175,10 @@ app.get('/indexadmin', (req, res) => {
 
 app.post('/agendamento', (req, res) => {
   
-const {username, date, horario, medico, informacoesamais} = req.body;
+const {username, email, date, horario, medico, informacoesamais} = req.body;
   
-const query = 'INSERT INTO consultas (username, date, horario, medico, informacoesamais) VALUES (?, ?, ?, ?, ?)';
-db.query(query, [username, date, horario, medico, informacoesamais], (err, results) => {
+const query = 'INSERT INTO consultas (username, email, date, horario, medico, informacoesamais) VALUES (?, ?, ?, ?, ?, ?)';
+db.query(query, [username, email, date, horario, medico, informacoesamais], (err, results) => {
   if (err) {
     console.error('Erro ao agendar a consulta', err);
     res.send('Erro ao agendar a consulta <a href="/agendamento"> Voltar para a página de agendamento</a>.');
