@@ -41,6 +41,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/admin-pages'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static(__dirname + '/assets/css'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // Configurar EJS como o motor de visualização
 app.set('view engine', 'ejs');
 
@@ -88,17 +91,17 @@ app.post('/login', (req, res) => {
       
       if (tipoUsuario === 'user') {
            console.log("Usuario Logado");
-        res.send('Voce foi logado com sucesso!<a href="/agendamento"> Entre na sua página</a>')
+        res.redirect('/agendamento')
         req.session.loggedin = true;
         req.session.name = username;
       } else if (tipoUsuario === 'Medico') {
        console.log("Usuario Logado");
-       res.send('Voce foi logado com sucesso!<a href="/medicopage"> Entre na sua página</a>')
+       res.redirect('/medicopage')
        req.session.loggedin = true;
        req.session.name = username;
       } else if (tipoUsuario === 'Gestor') {
         console.log("Usuario Logado");
-        res.send('Voce foi logado com sucesso!<a href="/gestorpage"> Entre na sua página</a>')
+        res.redirect('/gestorpage')
         req.session.loggedin = true;
         req.session.name = username;
       } else if (tipoUsuario === 'Administrador') {
@@ -122,12 +125,25 @@ console.log("Usuario Logado");
 app.get('/logout', (req, res) => {
 req.session.destroy(() => {
 res.redirect('/');
+console.log('Desconectado')
 });
+});
+
+app.get('/perfil', (req, res) => {
+  if (req.session.name) {
+  res.render('perfil', {req: req} );
+  console.log(req.session);
+
+} else {
+  // Se não estiver autenticado, redireciona para a página de login
+  res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
+}
 });
 
 app.get('/agendamento', (req, res) => {
   if (req.session.loggedin && req.session.name) {
-  res.render('agendamento');
+  res.render('agendamento', {req: req} );
+  console.log(req.session);
 
 } else {
   // Se não estiver autenticado, redireciona para a página de login
@@ -139,7 +155,8 @@ app.get('/gestorpage', (req, res) => {
   if (req.session.loggedin && req.session.name) {
   db.query('SELECT * FROM mensagens', (err, result) => {
     if (err) throw err;
-    res.render('gestorpage', { mensagens: result });
+    res.render('gestorpage', {req: req, mensagens: result} );
+    console.log(req.session);
   });
 } else {
   // Se não estiver autenticado, redireciona para a página de login
@@ -151,7 +168,8 @@ app.get('/medicopage', (req, res) => {
   if (req.session.loggedin && req.session.name) {
   db.query('SELECT * FROM consultas', (err, result) => {
     if (err) throw err;
-    res.render('medicopage', { consultas: result });
+    res.render('medicopage', {req: req, consultas: result} );
+    console.log(req.session);
   });
 } else {
   // Se não estiver autenticado, redireciona para a página de login
