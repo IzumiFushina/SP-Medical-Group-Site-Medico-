@@ -18,6 +18,7 @@
     "express-session": "^1.17.3",
     "mysql": "^2.18.1",
     "mysql2": "^3.6.3",
+    "nodemon": "^3.0.1",
     "php": "^1.0.2",
     "phpmyadmin": "^0.0.1-security"
   }

@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicons -->
+    <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
   <title>SP-Medical Group</title>
   <style>
     html {
@@ -76,7 +78,7 @@
     background-color: #ffffff;
     text-align: center;  
     width: 500px; /* Define a largura do container */
-    height: 400px; /* Define a altura do container */
+    height: 440px; /* Define a altura do container */
     margin: 0% auto;
     padding: 20px;
     border-radius: 50px;
@@ -129,6 +131,8 @@
     <form action="/agendamento" method="post" id="consultas"  >
 
       <input placeholder="Nome completo" type="text" id="username" name="username" required><br>
+      
+      <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email" required><br>
 
       <input placeholder="" type="date" id="date" name="date" required><br>
 
@@ -146,6 +150,6 @@
 
       <button type="submit">Agendar</button>
     </form>
-    <script></script>
+    <script src="assets/js/functions.js" ></script>
 </body>
 </html>

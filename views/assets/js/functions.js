@@ -85,3 +85,76 @@ function formatarCodigoPais() {
         inputTelefone.value = '+55 ' + valorAtual;
     }
 }
+
+
+//scripts para inserimento de dados
+function formatarCPF(input) {
+    let cpfLimpo = input.value.replace(/\D/g, "");
+    
+    if (cpfLimpo.length > 11) {
+        cpfLimpo = cpfLimpo.substring(0, 11);
+    }
+
+    let cpfFormatado = "";
+
+    if (cpfLimpo.length <= 3) {
+        cpfFormatado = cpfLimpo;
+    } else if (cpfLimpo.length <= 6) {
+        cpfFormatado = cpfLimpo.replace(/(\d{3})(\d{0,3})/, "$1.$2");
+    } else if (cpfLimpo.length <= 9) {
+        cpfFormatado = cpfLimpo.replace(/(\d{3})(\d{3})(\d{0,3})/, "$1.$2.$3");
+    } else {
+        cpfFormatado = cpfLimpo.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
+    }
+
+    input.value = cpfFormatado;
+
+    if (cpfLimpo.length >= 11) {
+        input.setCustomValidity(""); // CPF completo, sem erro de validação
+    } else {
+        input.setCustomValidity("Informe um CPF válido com 11 dígitos"); // Mensagem de erro de validação
+    }
+}
+
+
+function validarNomeCompleto(input) {
+    const nome = input.value;
+    
+    // Verificar se o nome contém apenas letras (a-zA-Z) e pelo menos um espaço em branco
+    const regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+
+    if (!regex.test(nome)) {
+        // Nome completo inválido
+        input.setCustomValidity("Por favor, insira um nome completo válido contendo apenas letras e pelo menos um espaço.");
+    } else {
+        // Nome completo válido
+        input.setCustomValidity("");
+    }
+}
+
+
+function validarEmail(input) {
+const email = input.value;
+
+// Expressão regular para validar o formato de email
+const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+if (regex.test(email)) {
+input.setCustomValidity(""); // Email válido, sem erro de validação
+} else {
+input.setCustomValidity("Informe um email válido"); // Mensagem de erro de validação
+}
+}
+
+function validarSenha(input) {
+const senha = document.getElementById("senha").value;
+const confirmarSenha = document.getElementById("confirmarSenha").value;
+
+if (senha === confirmarSenha) {
+    document.getElementById("senha").setCustomValidity(""); // Senhas iguais, sem erro de validação
+    document.getElementById("confirmarSenha").setCustomValidity(""); // Senhas iguais, sem erro de validação
+} else {
+    document.getElementById("senha").setCustomValidity("As senhas não coincidem"); // Mensagem de erro de validação para a senha
+    document.getElementById("confirmarSenha").setCustomValidity("As senhas não coincidem"); // Mensagem de erro de validação para a confirmação de senha
+}
+}
