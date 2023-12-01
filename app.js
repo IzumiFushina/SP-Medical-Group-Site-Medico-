@@ -44,6 +44,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/assets/css'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static(__dirname + '/pages'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // Configurar EJS como o motor de visualização
 app.set('view engine', 'ejs');
 
@@ -130,9 +133,12 @@ console.log('Desconectado')
 });
 
 app.get('/perfil', (req, res) => {
-
+  if (req.session.loggedin && req.session.name) {
   res.render('perfil', {req: req} );
-
+} else {
+  // Se não estiver autenticado, redireciona para a página de login
+  res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+}
 });
 
 app.get('/agendamento', (req, res) => {
@@ -142,7 +148,7 @@ app.get('/agendamento', (req, res) => {
 
 } else {
   // Se não estiver autenticado, redireciona para a página de login
-  res.send('');
+  res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
 }
 });
 
@@ -155,7 +161,7 @@ app.get('/gestorpage', (req, res) => {
   });
 } else {
   // Se não estiver autenticado, redireciona para a página de login
-  res.send('');
+  res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
 }
 });
 
@@ -168,7 +174,7 @@ app.get('/medicopage', (req, res) => {
   });
 } else {
   // Se não estiver autenticado, redireciona para a página de login
-  res.send('');
+  res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
 }
 });
 
@@ -183,7 +189,7 @@ app.get('/indexadmin', (req, res) => {
     });
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('');
+    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 
@@ -195,9 +201,9 @@ const query = 'INSERT INTO consultas (username, email, date, horario, medico, in
 db.query(query, [username, email, date, horario, medico, informacoesamais], (err, results) => {
   if (err) {
     console.error('Erro ao agendar a consulta', err);
-    res.send('Erro ao agendar a consulta <a href="/agendamento"> Voltar para a página de agendamento</a>.');
+    res.send('');
   } else {
-    res.send('Agendamento feito com sucesso <a href="/agendamento"> Voltar para a página de agendamento</a>');
+    res.send('<h5>Sua consulta foi agendada com sucesso!</h5><br><h6>Obrigado pela sua escolha</h6><br> %><a href="/agendamento">Volte para sua página</a></body></html>');
   }
 });
 
