@@ -10,150 +10,17 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href= "assets/admin-pages/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/agendamento.css">
     <!-- Favicons -->
     <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
   <title>SP-Medical Group</title>
 
   <style>
-    html {
-  height: 100%;
-  padding: 0px;
-}
-    * 
-    body {
-      background: rgb(255, 255, 255);
-      background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
-      font-family: Arial, sans-serif;
-      padding: 0px;
-    }
-
-    .cabecalho {
-      background-color: #3fbbc0;
-      color: #fff;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .titulo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-
-
-    h2 {
-      text-align: center;
-    }
-
-    label {
-      display: block;
-      font-weight: bold;
-      margin-top: 10px;
-      margin-left: 10px;
-    }
-
-
-    button[type="submit"] {
-      background-color: #007bff;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 15px;
-      margin-top: 15px;
-      font-size: 15px;
-    }
-    header {
-  background-color: white;
-  height: 115px;
-  align-items: center;
-  text-align: center;
-  max-width: 100%;
-  top: 0%;
-}
-.logo{
-  display: inline-block;
-}
-.divlogo{
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 120px; /* Torna a div do tamanho da janela de visualização */
-    margin-top: 0%;
-  }
-  .submenu {
-    background-color: #ffffff;
-    text-align: center;  
-    width: 500px; /* Define a largura do container */
-    height: 440px; /* Define a altura do container */
-    margin: 0% auto;
-    padding: 20px;
-    border-radius: 50px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    margin-top: 2%;
-  }
-  label {
-    display: block;
-    text-align: left;
-    margin-top: 0px;
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Estilo para os campos de entrada de texto */
-  input[type="text"],
-  input[type="username"],
-  input[type="time"],
-  input[type="date"],
-  input[type="informacoesamais"] {
-    font-size: 16px;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 400px;
-    box-sizing: border-box;
-  }
-  select {
-    font-size: 16px;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 400px;
-    box-sizing: border-box;
-  }
+   
   </style>
 </head>
 <body>
-  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <!-- Navbar Brand-->
-    <div class="navbar-brand ps-3"><span>Bem vindo(a) <%= req.session.name %></span></div>
-    <!-- Sidebar Toggle-->
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="assets/admin-pages/#!"><i class="fas fa-bars"></i></button>
-    <!-- Navbar Search-->
-    
-    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-        <div class="input-group">
-            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-        </div>
-    </form>
-    <!-- Navbar-->
-    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="assets/admin-pages/#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="assets/admin-pages/#!">Settings</a></li>
-                <li><a class="dropdown-item" href="assets/admin-pages/#!">Activity Log</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="/logout">Logout</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
-<br>
+  <%- include("assets/pages/nav"); %>
   <div  class="submenu">
     <h2>Agendar Consulta Médica</h2>
     <form action="/agendamento" method="post" id="consultas"  >

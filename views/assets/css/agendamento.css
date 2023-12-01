@@ -1,0 +1,127 @@
+
+html {
+    height: 100%;
+    padding: 0px;
+  }
+      * 
+      body {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
+        font-family: Arial, sans-serif;
+        padding: 0px;
+      }
+  
+
+  
+      .titulo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+  
+  
+  
+      h2 {
+        text-align: center;
+      }
+  
+      label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+  
+  
+      button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 15px;
+        margin-top: 15px;
+        font-size: 15px;
+      }
+  .logo{
+    display: inline-block;
+  }
+  .divlogo{
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+      align-items: center; /* Centraliza verticalmente */
+      height: 120px; /* Torna a div do tamanho da janela de visualização */
+      margin-top: 0%;
+    }
+    .submenu {
+      background-color: #ffffff;
+      text-align: center;  
+      width: 500px; /* Define a largura do container */
+      height: 480px; /* Define a altura do container */
+      margin: 0% auto;
+      padding: 20px;
+      border-radius: 50px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      margin-top: 2%;
+    }
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 0px;
+      font-weight: 600;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Estilo para os campos de entrada de texto */
+    input[type="text"],
+    input[type="username"],
+    input[type="time"],
+    input[type="date"],
+    input[type="informacoesamais"] {
+      font-size: 16px;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 400px;
+      box-sizing: border-box;
+    }
+    select {
+      font-size: 16px;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 400px;
+      box-sizing: border-box;
+    }
+
+    .dropdown {
+      display: block;
+      margin-left: 1500px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      min-width: 160px;
+      border-radius: 15px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      text-decoration: none;
+      display: block;
+      align-items: center;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
