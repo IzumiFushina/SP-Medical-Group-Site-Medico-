@@ -130,14 +130,9 @@ console.log('Desconectado')
 });
 
 app.get('/perfil', (req, res) => {
-  if (req.session.name) {
-  res.render('perfil', {req: req} );
-  console.log(req.session);
 
-} else {
-  // Se não estiver autenticado, redireciona para a página de login
-  res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
-}
+  res.render('perfil', {req: req} );
+
 });
 
 app.get('/agendamento', (req, res) => {
@@ -147,7 +142,7 @@ app.get('/agendamento', (req, res) => {
 
 } else {
   // Se não estiver autenticado, redireciona para a página de login
-  res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
+  res.send('');
 }
 });
 
@@ -160,7 +155,7 @@ app.get('/gestorpage', (req, res) => {
   });
 } else {
   // Se não estiver autenticado, redireciona para a página de login
-  res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
+  res.send('');
 }
 });
 
@@ -173,7 +168,7 @@ app.get('/medicopage', (req, res) => {
   });
 } else {
   // Se não estiver autenticado, redireciona para a página de login
-  res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
+  res.send('');
 }
 });
 
@@ -188,7 +183,7 @@ app.get('/indexadmin', (req, res) => {
     });
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<a algin-items="center" href="/login" color="red">É necessário fazer o login</a>');
+    res.send('');
   }
 });
 
