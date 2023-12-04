@@ -185,3 +185,15 @@ function MyDateTime() {
 
 // Atualizar a hora a cada segundo
 setInterval(MyDateTime, 1000);
+
+// Prealoader
+document.addEventListener("DOMContentLoaded", function () {
+  
+  
+    // Aguarde 1 segundo (1000 milissegundos) e remova o preloader
+      
+     
+    setTimeout(function () {
+        document.getElementById("preloader").style.display = "none";
+      }, 1500);
+    });

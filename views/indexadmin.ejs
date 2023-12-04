@@ -126,22 +126,21 @@
                                     <table class="excel-tableB" id="datatablesSimple">
                                         <thead>
                                             <tr>
-                                                <th name="A" >Usuário</th>
-                                                <th name="A" >Senha</th>
-                                                <th name="A" >CPF</th>
-                                                <th name="B" >Sexo</th>
-                                                <th name="B" >datanascimento</th>
-                                                <th name="A" >Email</th>
-                                                <th name="B" >Tipo</th>
+                                                <th class="B" >Usuário</th>
+                                                <th class="B" >CPF</th>
+                                                <th class="A" >Sexo</th>
+                                                <th class="A" >D. Nascimento</th>
+                                                <th class="B" >Email</th>
+                                                <th class="A" >Tipo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                           <ul>
                                             <% users.forEach(users => { %>
                                               <table class="excel-tableB">
-                                                <td><%=users.username%></td><td><%=users.password%></td><td><%=users.cpf%></td>
-                                                <td><%=users.sexo%></td><td><%=users.datanascimento%></td> <td><%=users.email%></td>
-                                                <td><%=users.tipo%></td>  
+                                                <td class="B" ><%=users.username%></td><td class="B" ><%=users.cpf%></td>
+                                                <td class="A" ><%=users.sexo%></td><td class="A" ><%=users.datanascimento%></td> <td class="B" ><%=users.email%></td>
+                                                <td class="A" ><%=users.tipo%></td>  
                                               </table>
                                             <% }); %>
                                           </ul>
