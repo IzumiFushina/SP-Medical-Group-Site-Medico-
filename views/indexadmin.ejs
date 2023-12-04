@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>SP-Medical Group</title>
         <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href= "assets/admin-pages/css/styles.css" rel="stylesheet" />
@@ -15,15 +15,14 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <div class="navbar-brand ps-3"><span>Bem vindo(a) <%= req.session.name %></span></div>
+            <div class="navbar-brand ps-3"><span>Bem vindo(a) <%= req.session.name %> ao SP-Medical Group</span></div>
             <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="assets/admin-pages/#!"><i class="fas fa-bars"></i></button>
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="assets/admin-pages/#!"></button>
             <!-- Navbar Search-->
             
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                   
                 </div>
             </form>
             <!-- Navbar-->
@@ -31,10 +30,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="assets/admin-pages/#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/perfil">Settings</a></li>
-                        <li><a class="dropdown-item" href="assets/admin-pages/#!">Activity Log</a></li>
+                        <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        <li><a class="dropdown-item" href="/logout">Sair</a></li>
                     </ul>
                 </li>
             </ul>
@@ -104,7 +102,8 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small"><span id="current-time" ></span>
+                        <div class="small"><p><!--Não apague o espaço da tag <p>-->                                                                                                                                                                                                                                                            
+                        </p><span id="current-time" ></span>
                         </div>
                         
                     </div>

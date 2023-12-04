@@ -17,12 +17,12 @@
             <!-- Navbar Brand-->
         <div class="navbar-brand ps-3"><span>Bem vindo(a) <%= req.session.name %></span></div>
             <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="assets/admin-pages/#!"><i class="fas fa-bars"></i></button>
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="assets/admin-pages/#!"></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+   
+
                 </div>
             </form>
             <!-- Navbar-->
@@ -33,7 +33,7 @@
                         <li><a class="dropdown-item" href="assets/admin-pages/#!">Settings</a></li>
                         <li><a class="dropdown-item" href="assets/admin-pages/#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        <li><a class="dropdown-item" href="/logout">Sair</a></li>
                     </ul>
                 </li>
             </ul>
@@ -83,10 +83,11 @@
                             </a>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div>
+
+                        <div class="sb-sidenav-footer">
+                            <div class="small"><p><!--Não apague o espaço da tag <p>-->                                                                                                                                                                                                                                                            
+                            </p><span id="current-time" ></span>
+                            </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">

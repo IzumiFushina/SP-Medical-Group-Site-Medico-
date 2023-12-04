@@ -1,0 +1,87 @@
+h1 {
+    font-family: Georgia;
+}
+
+.logo {
+    display: block;
+    margin-top: 365px;
+    margin-left: 35px;
+}
+
+.divisao {
+    display: block;
+    width: 1px;
+    height: 500px;
+    background-color: black;
+    margin-top: -300px;
+    margin-left: 635px;
+}
+
+.informacoes {
+    display: block;
+    margin-top: -500px;
+    margin-left: 700px;
+    width: 800px;
+} 
+
+.excel-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width:1000px;
+    margin: 0 auto;
+  }
+  
+  .excel-table th {
+    border: 1px solid #000;
+    text-align: center;
+    width: 20%;
+  }
+  
+  .excel-table td {
+    border: 1px solid #000;
+    text-align: center;
+    width: 20%;
+  }
+  
+  .excel-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .excel-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .excel-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .excel-tableB {
+    border-collapse: collapse;
+    width: 100%;
+    max-width:1500px;
+    margin: 0 auto;
+  }
+  
+  .excel-tableB th [name="A"] {
+    border: 1px solid #000;
+    text-align: center;
+    width: 21.42%;
+  }
+  
+  .excel-tableB td [name="A"] {
+    border: 1px solid #000;
+    text-align: center;
+    width: 21.42%;
+  }
+  
+  .excel-tableB th {
+    background-color: #f2f2f2;
+  }
+  
+  .excel-tableB tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .excel-tableB tr:hover {
+    background-color: #ddd;
+  }

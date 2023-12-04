@@ -34,14 +34,14 @@
 
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <div class="navbar-brand ps-3"><span>Bem vindo(a) <%= req.session.name %></span></div>
+    <div class="navbar-brand ps-3"><span>Bem vindo(a) <%= req.session.name %> ao SP-Medical Group</span></div>
     <!-- Navbar-->
     <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
       <div class="dropdown">
         <a class="nav-link dropdown-toggle"><i class="fas fa-user fa-fw"></i></a>
         <div class="dropdown-content">
           <a href="/perfil">Perfil</a>
-          <a href="assets/admin-pages/#!">Suas Consultas</a>
+          <a href="/consultas">Suas Consultas</a>
           <hr/>
           <a href="/logout">Sair</a>
         </div>

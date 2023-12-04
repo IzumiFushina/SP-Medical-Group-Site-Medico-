@@ -7,6 +7,20 @@
 <body>
   <%- include("assets/pages/nav"); %>
   <img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><div class="divisao"></div>
+  <div class="informacoes">
+  <h1>Informações do usuário</h1><br><br><br>
+
+  <% dados.forEach(function(row) { %>
   
+  <tr>
+    <td><b>Nome:</b><%= row.username %></td><br><br>
+    <td><b>E-mail:</b><%= row.email %></td><br><br>
+    <td><b>CPF:</b><%= row.cpf %></td><br><br>
+    <td><b>Data de nascimento:</b><%= row.datanascimento %></td><br><br>
+    <td><b>Sexo:</b><%= row.sexo %></td><br><br>
+  </tr>
+  
+  <% }); %>
+</div>
 </body>
 </html>

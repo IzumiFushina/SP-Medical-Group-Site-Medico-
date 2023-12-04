@@ -16,14 +16,13 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="assets/gestorpage/index.html">Start Bootstrap</a>
+            <div class="navbar-brand ps-3"><span>Bem vindo(a) <%= req.session.name %> ao SP-Medical Group</span></div>
             <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="assets/gestorpage/#!"><i class="fas fa-bars"></i></button>
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="assets/gestorpage/#!"></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+
                 </div>
             </form>
             <!-- Navbar-->
@@ -31,10 +30,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="assets/gestorpage/#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="assets/gestorpage/#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="assets/gestorpage/#!">Activity Log</a></li>
+                        <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="/login">Logout</a></li>
+                        <li><a class="dropdown-item" href="/login">Sair</a></li>
                     </ul>
                 </li>
             </ul>
@@ -73,9 +71,9 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div>
+                        <div class="small"><p><!--Não apague o espaço da tag <p>-->                                                                                                                                                                                                                                                            
+                        </p><span id="current-time" ></span>
+                        </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
