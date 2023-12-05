@@ -34,14 +34,17 @@
       <input placeholder="" type="time" id="horario" name="horario" required><br>
 
       <select id="medico" name="medico" required>
-        <option value="" >Selecione um médico</option> 
-        <option value="Doctor Who" >Doctor Who</option> 
-        <option value="Elizabeth Schimidt" >Elizabeth Schimidt</option> 
-        <option value="Bonnie Fazbear" >Bonnie Fazbear</option>
-        <option value="Milena Shokan">Milena Shokan</option>
+        <option value="" >Selecione um Departamento/Médico</option> 
+        <option value="Doctor Who" >Cardiologia/Doctor Who</option> 
+        <option value="Elizabeth Schimidt" >Neurologia/Elizabeth Schimidt</option> 
+        <option value="Bonnie Fazbear" >Fisioterapia/Bonnie Fazbear</option>
+        <option value="Milena Shokan">Pediatria/Milena Shokan</option>
+        <option value="Walter White">Oncologia/Walter White</option>
+        <option value="Tiradentes">Odontologia/Tiradentes</option>
+        <option value="Fátima dos Santos">Ginecologia/Fátima dos Santos</option>
       </select><br>
 
-      <input placeholder="informações a mais" type="informacoesamais" id="informacoesamais" name="informacoesamais" required><br>
+      <input placeholder="Descreva alguma observação" onclick="alertinput()" type="informacoesamais" id="informacoesamais" name="informacoesamais"><br>
 
       <button type="submit">Agendar</button>
     </form>

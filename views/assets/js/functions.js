@@ -197,3 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("preloader").style.display = "none";
       }, 1500);
     });
+
+        function alertinput() {
+            window.alert('ESTE CAMPO NÃO É OBRIGATÓRIO');
+        }
