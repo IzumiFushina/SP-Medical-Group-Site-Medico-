@@ -1,4 +1,13 @@
-        //Function Popup para páginas que inserem dados
+function showDepartment(department) {
+    // Oculta todos os departamentos
+    $('.department-content').hide();
+    
+    // Mostra o departamento correspondente
+    $('#content-' + department).show();
+  }
+
+
+//Function Popup para páginas que inserem dados
         function abrirPopupHome() {
             // Abrir uma nova janela com a página EJS
             window.open('/', 'NomeDaJanela', 'width=1000,height=800');
@@ -160,31 +169,6 @@ if (senha === confirmarSenha) {
 }
 
 
-//Função myDateTime
-
-function MyDateTime() {
-    // Obter a data atual
-    var currentDate = new Date();
-
-    // Extrair horas, minutos e segundos
-    var hours = currentDate.getHours();
-    var minutes = currentDate.getMinutes();
-    var seconds = currentDate.getSeconds();
-
-    // Formatar os valores para ter dois dígitos
-    hours = (hours < 10) ? "0" + hours : hours;
-    minutes = (minutes < 10) ? "0" + minutes : minutes;
-    seconds = (seconds < 10) ? "0" + seconds : seconds;
-
-    // Criar a string de tempo no formato desejado (HH:MM:SS)
-    var timeString = hours + ":" + minutes + ":" + seconds;
-
-    // Atualizar o conteúdo do elemento span
-    document.getElementById("current-time").innerText = timeString;
-}
-
-// Atualizar a hora a cada segundo
-setInterval(MyDateTime, 1000);
 
 // Prealoader
 document.addEventListener("DOMContentLoaded", function () {

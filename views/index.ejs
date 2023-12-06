@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -28,6 +31,13 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/SP-Medical Group/assets/css/style.css" rel="stylesheet">
+
+  <!-- Adicione o link para o Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Adicione o link para o jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <!-- Adicione o link para o Bootstrap 5 JS e Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- =======================================================
   * Template Name: SP-Medical Group
@@ -156,19 +166,19 @@
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Equipes</a></h4>
+              <h4 class="title"><span>Equipes</span></h4>
               <p class="description">Equipes completas de médicos altamente qualificados.</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Antendimento</a></h4>
+              <h4 class="title"><span>Antendimeto</span></h4>
               <p class="description">Atendimentos prezando o seu bem estar.</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Saúde</a></h4>
+              <h4 class="title"><span>Saúde</span></h4>
               <p class="description">Dedicação total para fazer o melhor para você.</p>
             </div>
 
@@ -181,36 +191,36 @@
     <!-- ======= Departments Section ======= -->
     <section id="departments" class="departments">
       <div class="container">
-
         <div class="section-title">
           <h2>Departamentos</h2>
           <p>Tudo de que você precisa para sua saúde aqui.</p>
         </div>
-
+      
         <div class="row gy-4">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Cardiologia</a>
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1" onclick="showDepartment('Cardiologia')">Cardiologia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Neurologia</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2" onclick="showDepartment('Neurologia')">Neurologia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Fisioterapia</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3" onclick="showDepartment('Fisioterapia')">FIsioterapia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Pediatria</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4" onclick="showDepartment('Pediatria')">Pediatria</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Oncologia</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5" onclick="showDepartment('Oncologia')">Oncologia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-6">Odontologia</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-6" onclick="showDepartment('Odontologia')">Odontologia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-7">Ginecologia</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-7" onclick="showDepartment('Ginecologia')">Ginecologia</a>
               </li>
+              <!-- Adicione mais departamentos conforme necessário -->
             </ul>
           </div>
           <div class="col-lg-9">
@@ -302,7 +312,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section><!-- End Departments Section -->
 
@@ -496,7 +505,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="/index" method="post" id="form" class="form" >
+            <form onclick="enviarMensagem()" action="/index" method="post" id="form" class="form" >
               <div class="text-center"><h4 >Envie uma mensagem para nós</h4></div><br>
               <div class="row">
                 <div class="col-md-6 form-group">
@@ -518,6 +527,17 @@
               <br>
               <div class="text-center"><button type="submit">Enviar mensagem</button></div>
             </form>
+
+            <script>
+              let alertaExibido = false;
+          
+              function enviarMensagem() {
+                if (!alertaExibido) {
+                  alert("Alerta exibido!");
+                  alertaExibido = true;
+                }
+              }
+            </script>
 
           </div>
 

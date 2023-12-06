@@ -23,7 +23,11 @@ a:hover {
   color: #3291e6;
   text-decoration: none;
 }
-
+ul, li, a {
+  border-radius: none;
+  border: none;
+  text-decoration: none;
+}
 h1,
 h2,
 h3,
