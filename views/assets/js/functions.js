@@ -65,22 +65,15 @@ function showDepartment(department) {
         
         }
 
-        // Obtém o formulário pelo ID--HOME
-        const form = document.getElementById('form');
-
-        // Variável para rastrear se o formulário já foi clicado
-        let formClicado = false;
-
-        // Adiciona um listener de evento para o clique no formulário
-        form.addEventListener('click', function() {
-            // Verifica se o formulário ainda não foi clicado
-            if (!formClicado) {
-                // Exibe um alerta apenas no primeiro clique
-                Bootsrap.modal('Mande uma mensagem para nós!                                   Responderemos em até 48 horas via E-mail');
-                // Define a variável para indicar que o formulário já foi clicado
-                formClicado = true;
-            }
-        });
+        // Obtém o formulário pelo onclick--HOME
+        let alertaExibido = false;
+          
+        function enviarMensagem() {
+          if (!alertaExibido) {
+            alert("Mande uma mensagem para nós!                                   Responderemos em até 48 horas via E-mail");
+            alertaExibido = true;
+          }
+        }
 
 
         document.getElementById('telefone').addEventListener('blur', formatarCodigoPais);
