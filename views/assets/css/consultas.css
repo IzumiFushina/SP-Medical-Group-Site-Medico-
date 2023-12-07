@@ -27,7 +27,7 @@ h1 {
 .excel-table {
     border-collapse: collapse;
     width: 100%;
-    max-width:1000px;
+    max-width:1500px;
     margin: 0 auto;
   }
   
@@ -62,17 +62,6 @@ h1 {
     margin: 0 auto;
   }
   
-  .excel-tableB th [name="A"] {
-    border: 1px solid #000;
-    text-align: center;
-    width: 21.42%;
-  }
-  
-  .excel-tableB td [name="A"] {
-    border: 1px solid #000;
-    text-align: center;
-    width: 21.42%;
-  }
   
   .excel-tableB th {
     background-color: #f2f2f2;
