@@ -6,12 +6,12 @@
 </head>
 <body>
   <%- include("assets/pages/nav"); %>
-  <img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><div class="divisao"></div>
+  <a href="/agendamento" ><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"></a><div class="divisao"></div>
   <div class="informacoes">
-  <h1>Suas consultas <%=req.session.name%></h1><br><br><br>
+  <h1><b>Suas consultas</b> <i><%=req.session.name%></i></h1><br><br><br>
 
   
-    <table class="excel-table" id="datatablesSimple">
+    <table id="datatablesSimple">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -24,15 +24,25 @@
         <tbody>
           <ul>
             <% dados.forEach(function(row) { %>
-              <table class="excel-table">
+              <tr>
                 <td><%=row.username%></td><td><%=row.date%></td>
                 <td><%=row.horario%></td><td><%=row.medico%></td>
                 <td><%=row.informacoesamais%></td> 
-              </table>
+              </tr>
             <% }); %>
-        </ul>
     </tbody>
 </table>
+<script>
+  window.addEventListener('DOMContentLoaded', event => {
+      // Simple-DataTables
+      // https://github.com/fiduswriter/Simple-DataTables/wiki
+  
+      const datatablesSimple = document.getElementById('datatablesSimple');
+      if (datatablesSimple) {
+          new simpleDatatables.DataTable(datatablesSimple);
+      }
+  });
+  </script>
 </div>
 </body>
 </html>

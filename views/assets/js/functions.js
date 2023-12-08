@@ -75,6 +75,13 @@ function showDepartment(department) {
           }
         }
 
+        function alertinput() {
+            if (!alertaExibido) {
+              alert("ESTE CAMPO NÃO É OBRIGATÓRIO");
+              alertaExibido = true;
+            }
+          }
+
 
         document.getElementById('telefone').addEventListener('blur', formatarCodigoPais);
 
@@ -123,7 +130,7 @@ function validarNomeCompleto(input) {
     const nome = input.value;
     
     // Verificar se o nome contém apenas letras (a-zA-Z) e pelo menos um espaço em branco
-    const regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    const regex = /[a-zA-Z]/;
 
     if (!regex.test(nome)) {
         // Nome completo inválido
@@ -175,9 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 1500);
     });
 
-        function alertinput() {
-            window.alert('ESTE CAMPO NÃO É OBRIGATÓRIO');
-        }
 //Tabelas----
         window.addEventListener('DOMContentLoaded', event => {
             // Simple-DataTables
