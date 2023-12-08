@@ -42,10 +42,10 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="assets/gestorpage/index.html">
+                            <div class="sb-sidenav-menu-heading">Edição de Tabela</div>
+                            <a class="nav-link" href="http://localhost/phpmyadmin">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Mensagens
                             </a>
                             <div class="sb-sidenav-menu-heading">Formas de Contato</div>
                             <a class="nav-link collapsed" href="assets/gestorpage/#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -91,30 +91,62 @@
                                 Informações referentes as mensagens
                             </div>
                             <div class="card-body">
-                                <table class="excel-table" id="datatablesSimple">
+                                <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th class="A" >Nome Completo</th>
-                                            <th class="B">E-mail</th>
-                                            <th class="B">Telefone</th>
-                                            <th class="B" >Assunto</th>
-                                            <th class="D" >Mensagem</th>
+                                            <th>Nome Completo</th>
+                                            <th>E-mail</th>
+                                            <th>Telefone</th>
+                                            <th>Assunto</th>
+                                            <th>Mensagem</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      <ul>
                                         <% mensagens.forEach(mensagens => { %>
-                                          <table class="excel-table">
-                                            <td class="A" ><%=mensagens.nomecompleto%></td>
-                                            <td class="B"><%=mensagens.email%></td>
-                                            <td class="B"><%=mensagens.telefone%></td>
-                                            <td class="B" ><%=mensagens.assunto%></td>
-                                            <td class="D" ><%=mensagens.mensagem%></td><td> 
-                                          </table>
+                                            <tr>
+                                            <td><%=mensagens.nomecompleto%></td>
+                                            <td><%=mensagens.email%></td>
+                                            <td><%=mensagens.telefone%></td>
+                                            <td><%=mensagens.assunto%></td>
+                                            <td><%=mensagens.mensagem%></td>
+                                        </tr>
                                         <% }); %>
-                                      </ul>
                                     </tbody>
                                 </table>
+                                <style>
+                                    .container {
+                                        margin: 30px;
+                                    }
+                                
+                                    #datatablesSimple {
+                                        border-collapse: collapse;
+                                        width: 100%;
+                                    }
+                                
+                                    #datatablesSimple th,
+                                    #datatablesSimple td {
+                                        border: 1px solid black;
+                                        padding: 8px;
+                                        text-align: left;
+                                    }
+                                
+                                    #datatablesSimple th {
+                                        background-color: #51b3f1;
+                                        color: white;
+                                    }
+                                </style>
+                                <script>
+                                    //Tabelas----
+                                    window.addEventListener('DOMContentLoaded', event => {
+                                        // Simple-DataTables
+                                        // https://github.com/fiduswriter/Simple-DataTables
+
+                                        const datatablesSimple = document.getElementById('datatablesSimple');
+                                    if (datatablesSimple) {
+                                        new simpleDatatables.DataTable(datatablesSimple);
+                                    }
+                                });
+                                </script>
                             </div>
                         </div>
                     </div>

@@ -11299,69 +11299,24 @@ body {
   border-radius: 0.375rem !important;
 }
 
-.excel-table {
+.container {
+  margin: 30px;
+}
+
+#datatablesSimple {
   border-collapse: collapse;
   width: 100%;
-  max-width:1000px;
-  margin: 0 auto;
 }
 
-.excel-table th {
-  border: 1px solid #000;
-  text-align: center;
-  width: 20%;
+#datatablesSimple th,
+#datatablesSimple td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
 }
 
-.excel-table td {
-  border: 1px solid #000;
-  text-align: center;
-  width: 20%;
+#datatablesSimple th {
+  background-color: #51b3f1;
+  color: white;
 }
-
-.excel-table th {
-  background-color: #f2f2f2;
-}
-
-.excel-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.excel-table tr:hover {
-  background-color: #ddd;
-}
-.consultas {
-  max-width: 2000px;
-}
-
-.excel-tableB {
-  border-collapse: collapse;
-    width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
-  }
-  
-  
-  
-  .excel-tableB th, .excel-tableB td {
-    border: 1px solid #000;
-    text-align: center;
-    padding: 0.5px;
-    width: 16.666%;
-  }
-  
-  .excel-tableB th {
-    background-color: #f2f2f2;
-  }
-  
-  .excel-tableB tr:nth-child(even) {
-    
-   
-  background-color: #f2f2f2;
-  }
-  
-  .excel-tableB tr:hover {
-    
-   
-  background-color: #ddd;
-  }
   

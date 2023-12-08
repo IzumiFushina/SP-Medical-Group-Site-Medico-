@@ -122,29 +122,45 @@
                                     Informações referentes aos usuários
                                 </div>
                                 <div class="card-body">
-                                    <table class="excel-tableB" id="datatablesSimple">
+                                    <div class="container">
+                                    <table id="datatablesSimple">
                                         <thead>
                                             <tr>
-                                                <th class="B" >Usuário</th>
-                                                <th class="B" >CPF</th>
-                                                <th class="A" >Sexo</th>
-                                                <th class="A" >D. Nascimento</th>
-                                                <th class="B" >Email</th>
-                                                <th class="A" >Tipo</th>
+                                                <th>Usuário</th>
+                                                <th>CPF</th>
+                                                <th>Sexo</th>
+                                                <th>Data de Nascimento</th>
+                                                <th>Email</th>
+                                                <th>Tipo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                          <ul>
+                                          
                                             <% users.forEach(users => { %>
-                                              <table class="excel-tableB">
-                                                <td class="B" ><%=users.username%></td><td class="B" ><%=users.cpf%></td>
-                                                <td class="A" ><%=users.sexo%></td><td class="A" ><%=users.datanascimento%></td> <td class="B" ><%=users.email%></td>
-                                                <td class="A" ><%=users.tipo%></td>  
-                                              </table>
+                                                <tr>
+                                                <td><%=users.username%></td>
+                                                <td><%=users.cpf%></td>
+                                                <td><%=users.sexo%></td>
+                                                <td><%=users.datanascimento%></td>
+                                                <td><%=users.email%></td>
+                                                <td><%=users.tipo%></td>  
+                                            </tr>
                                             <% }); %>
-                                          </ul>
+                                        
                                         </tbody>
                                     </table>
+                                    <script>
+                                        window.addEventListener('DOMContentLoaded', event => {
+                                            // Simple-DataTables
+                                            // https://github.com/fiduswriter/Simple-DataTables/wiki
+                                        
+                                            const datatablesSimple = document.getElementById('datatablesSimple');
+                                            if (datatablesSimple) {
+                                                new simpleDatatables.DataTable(datatablesSimple);
+                                            }
+                                        });
+                                        </script>
+                                </div>
                                 </div>
                         </div>
                         <div class="card mb-4">
