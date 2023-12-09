@@ -77,11 +77,11 @@ app.get('/login', (req, res) => {
 });
 // Rota para processar o formulário de login
 app.post('/login', (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, cpf} = req.body;
 
-  const query = 'SELECT * FROM users WHERE username = ? AND password = SHA1(?) ';
+  const query = 'SELECT * FROM users WHERE username = ? AND password = SHA1(?) AND cpf = ?';
 
-  db.query(query, [username, password], (err, results) => {
+  db.query(query, [username, password, cpf], (err, results) => {
     if (err) throw err;
 
     if (results.length > 0) {

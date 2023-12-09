@@ -24,7 +24,7 @@
     <h2>Agendar Consulta Médica</h2>
     <form action="/agendamento" method="post" id="consultas"  >
 
-      <input placeholder="Digite seu nome" type="text" id="username" name="username" value="<%=req.session.name%>" required><br>
+      <textarea id="username" name="username" value="<%=req.session.name%>" required></textarea><br>
       
       <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email" required><br>
 
@@ -39,7 +39,7 @@
         <option value="Fisioterapeuta Bonnie Fazbear" >Fisioterapia/Bonnie Fazbear</option>
         <option value="Pediatra Milena Shokan">Pediatria/Milena Shokan</option>
         <option value="Oncologista Walter White">Oncologia/Walter White</option>
-        <option value=" Odontologista Tiradentes">Odontologia/Tiradentes</option>
+        <option value=" Odontologista Miguel Tiradentes">Odontologia/Miguel Tiradentes</option>
         <option value="Ginecologista dos Santos">Ginecologia/Fátima dos Santos</option>
       </select><br>
 
