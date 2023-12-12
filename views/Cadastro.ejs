@@ -42,10 +42,41 @@
     <option value="Feminino">Feminino</option>
     <option value="NaoInformado">Não informar</option>
   </select><br><br>
+  <label>Senha:</label>
+  <input type="password" id="password" minlength="8">
+  <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
+  
+  <script>
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById("password");
+      const toggleButton = document.querySelector(".toggle-password");
+  
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleButton.innerHTML = "";
+      } else {
+        passwordInput.type = "password";
+        toggleButton.innerHTML = "";
+      }
+    }
+  </script>
+  <style>
+    /* Optional: Style for the button */
+    .toggle-password {
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+    }
 
-  <label for="senha">Senha:</label>
-  <input placeholder="Digite sua Senha" type="password" name="password" id="password" pattern="^{8,}$" required title="Mínimo, 8 caracteres."required><br><br>
-
+    .toggle-password:before {
+      content: "🔒";
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+    }
+  </style>
+    <br><br>
   <button type="submit" class="Cadastro" value="user" >Cadastrar</button>
 </form>
       </div>
