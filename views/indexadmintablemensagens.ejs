@@ -101,16 +101,15 @@
                                 <a class="nav-link" href="https://web.whatsapp.com/">WhatsApp</a>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading"></div>
                         <div class="sb-sidenav-menu-heading">Tabelas</div>
+                        <a class="nav-link" href="/indexadmin">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Users
+                        </a>
                         <a class="nav-link" href="/indexadmintableconsultas">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Consultas
                         </a>
-                        <a class="nav-link" href="/indexadmintablemensagens">
-                          <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                          Mensagens
-                      </a>
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -127,52 +126,46 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Painel de Controle</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Tabela 'users'</li>
+                        <li class="breadcrumb-item active">Tabela 'mensagens'</li>
                     </ol>
                 </div>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Informações referentes aos usuários
+                        Informações referentes as mensagens enviadas
                     </div>
                     <div class="card-body">
                         <div class="container">
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
-                                        <th>Usuário</th>
-                                        <th>CPF</th>
-                                        <th>Sexo</th>
-                                        <th>Data de Nascimento</th>
-                                        <th>Email</th>
-                                        <th>Tipo</th>
+                                        <th>Nome Completo</th>
+                                        <th>E-mail</th>
+                                        <th>Telefone</th>
+                                        <th>Assunto</th>
+                                        <th>Mensagem</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    <% users.forEach(users=> { %>
+                                    <% mensagens.forEach(mensagens=> { %>
                                         <tr>
                                             <td>
-                                                <%=users.username%>
+                                                <%=mensagens.nomecompleto%>
                                             </td>
                                             <td>
-                                                <%=users.cpf%>
+                                                <%=mensagens.email%>
                                             </td>
                                             <td>
-                                                <%=users.sexo%>
+                                                <%=mensagens.telefone%>
                                             </td>
                                             <td>
-                                                <%=users.datanascimento%>
+                                                <%=mensagens.assunto%>
                                             </td>
                                             <td>
-                                                <%=users.email%>
-                                            </td>
-                                            <td>
-                                                <%=users.tipo%>
+                                                <%=mensagens.mensagem%>
                                             </td>
                                         </tr>
                                         <% }); %>
-
                                 </tbody>
                             </table>
                             <script>

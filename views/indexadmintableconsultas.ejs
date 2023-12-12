@@ -101,11 +101,10 @@
                                 <a class="nav-link" href="https://web.whatsapp.com/">WhatsApp</a>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading"></div>
                         <div class="sb-sidenav-menu-heading">Tabelas</div>
-                        <a class="nav-link" href="/indexadmintableconsultas">
+                        <a class="nav-link" href="/indexadmin">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Consultas
+                            Users
                         </a>
                         <a class="nav-link" href="/indexadmintablemensagens">
                           <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -127,52 +126,46 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Painel de Controle</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Tabela 'users'</li>
+                        <li class="breadcrumb-item active">Tabela 'consultas'</li>
                     </ol>
                 </div>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Informações referentes aos usuários
+                        Informações referentes as consultas
                     </div>
                     <div class="card-body">
                         <div class="container">
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
-                                        <th>Usuário</th>
-                                        <th>CPF</th>
-                                        <th>Sexo</th>
-                                        <th>Data de Nascimento</th>
-                                        <th>Email</th>
-                                        <th>Tipo</th>
+                                        <th>Nome</th>
+                                        <th>Data</th>
+                                        <th>Hora</th>
+                                        <th>Médico</th>
+                                        <th>Informações a mais</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    <% users.forEach(users=> { %>
+                                    <% consultas.forEach(consultas=> { %>
                                         <tr>
                                             <td>
-                                                <%=users.username%>
+                                                <%= consultas.username %>
                                             </td>
                                             <td>
-                                                <%=users.cpf%>
+                                                <%= consultas.date %>
                                             </td>
                                             <td>
-                                                <%=users.sexo%>
+                                                <%= consultas.horario %>
                                             </td>
                                             <td>
-                                                <%=users.datanascimento%>
+                                                <%= consultas.medico %>
                                             </td>
                                             <td>
-                                                <%=users.email%>
-                                            </td>
-                                            <td>
-                                                <%=users.tipo%>
+                                                <%= consultas.informacoesamais%>
                                             </td>
                                         </tr>
                                         <% }); %>
-
                                 </tbody>
                             </table>
                             <script>

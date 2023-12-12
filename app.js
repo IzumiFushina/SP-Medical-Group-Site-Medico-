@@ -247,6 +247,52 @@ app.get('/indexadmin', (req, res) => {
   }
 });
 
+app.get('/indexadmintableconsultas', (req, res) => {
+
+  // Verifica se o usuário está autenticado
+
+  if (req.session.loggedin && req.session.name) {
+    if (req.session.tipoUsuario === 'Administrador') {
+
+      // Se estiver autenticado, consulta os usuários e renderiza a página
+      db.query('SELECT * FROM consultas', (err, result) => {
+        if (err) throw err;
+        res.render('indexadmintableconsultas', { req: req, consultas: result });
+        console.log(req.session);
+      });
+      // Tentativa de invasão por usuários sem permissão, leva o usuário ser desconectado da págian
+    } else {
+      res.redirect('/logout');
+    }
+  } else {
+    // Se não estiver autenticado, redireciona para a página de login
+    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+  }
+});
+
+app.get('/indexadmintablemensagens', (req, res) => {
+
+  // Verifica se o usuário está autenticado
+
+  if (req.session.loggedin && req.session.name) {
+    if (req.session.tipoUsuario === 'Administrador') {
+
+      // Se estiver autenticado, consulta os usuários e renderiza a página
+      db.query('SELECT * FROM mensagens', (err, result) => {
+        if (err) throw err;
+        res.render('indexadmintablemensagens', { req: req, mensagens: result });
+        console.log(req.session);
+      });
+      // Tentativa de invasão por usuários sem permissão, leva o usuário ser desconectado da págian
+    } else {
+      res.redirect('/logout');
+    }
+  } else {
+    // Se não estiver autenticado, redireciona para a página de login
+    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+  }
+});
+
 app.get('/Cadastro', (req, res) => {
   res.render('Cadastro');
 });
