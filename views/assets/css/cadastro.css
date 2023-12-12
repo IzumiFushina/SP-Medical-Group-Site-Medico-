@@ -6,12 +6,11 @@ html {
 }
 
 
-* 
-body {
+* body {
   background: rgb(255, 255, 255);
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
 }
-  
+
 header {
   background-color: white;
   height: 115px;
@@ -19,151 +18,168 @@ header {
   text-align: center;
   max-width: 100%;
 }
-  /* editar logo */
 
-  .logo{
-    width: auto; /* Define a largura da imagem como automática */
-  height: auto; /* Define a altura da imagem como automática */
-  align-self: center; /* Centraliza verticalmente a imagem dentro da div */
-  
+/* editar logo */
+
+.logo {
+  width: auto;
+  /* Define a largura da imagem como automática */
+  height: auto;
+  /* Define a altura da imagem como automática */
+  align-self: center;
+  /* Centraliza verticalmente a imagem dentro da div */
+
 }
-  
-
-  .divlogo{
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 120px; /* Torna a div do tamanho da janela de visualização */
-    margin-top: 0%;
-  }
-
-  
-  
-  
-  /* Estilo para o contêiner do formulário de cadastro */
-  .submenu {
-    background-color: #ffffff;
-    border-radius: 50px;
-    max-width: 500px;
-    margin: 0% auto;
-    margin-top: 2%;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    align-items: center;
-    
-      width: 700px; /* Define a largura do container */
-      height: 665px; /* Define a altura do container */
-    
-    
-  }
-  
-  /* Estilo para o título "Crie sua conta" */
-  h1 {
-   text-align: center;
-    font-size: 24px;
-    margin: 0;
-    margin-bottom: 20px;
-    color: #000000;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Estilo para os rótulos dos campos de entrada */
-  label {
-    display: block;
-    text-align: left;
-    margin-top: 0px;
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Estilo para os campos de entrada de texto */
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="date"],
-  select {
-    width: 90%;
-    padding: 15px;
-    margin-top: 5px;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    font-family: 'Times New Roman';
-    
-  }
 
 
-  #sexo{
-    width: 96%;
-    padding: 15px;
-    margin-top: 5px;
-    border: 1px solid #000000;
-    border-radius: 3px;
-  }
+.divlogo {
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  height: 120px;
+  /* Torna a div do tamanho da janela de visualização */
+  margin-top: 0%;
+}
 
 
 
-  #confirmarSenha{
-    width: 90%;
-    padding: 15px;
-    margin-top: 5px;
-    border: 1px solid #000000;
-    border-radius: 3px;
-  }
-  input::placeholder, textarea::placeholder {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: normal; /* Peso da fonte */
-    color: #999; /* Cor do texto do placeholder */
-  }
 
-  select {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: normal; /* Peso da fonte */
-  }
+/* Estilo para o contêiner do formulário de cadastro */
+.submenu {
+  background-color: #ffffff;
+  border-radius: 50px;
+  max-width: 500px;
+  margin: 0% auto;
+  margin-top: 2%;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  align-items: center;
 
-  input[type="text"] {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: normal; /* Peso da fonte */
-  }
-  
-  
-  
-  /* Estilo para o botão de cadastro */
-  .Cadastro {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: 15px 30px;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Estilo para links */
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  /* Estilo para mensagens de erro */
+  width: 700px;
+  /* Define a largura do container */
+  height: 665px;
+  /* Define a altura do container */
 
-  
-  /* Estilo para os elementos select */
-  select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  /* Estilo para parágrafos dentro do formulário */
-  p.form {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Estilo para campos de senha */
-  
+
+}
+
+/* Estilo para o título "Crie sua conta" */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 20px;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilo para os rótulos dos campos de entrada */
+label {
+  display: block;
+  text-align: left;
+  margin-top: 0px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilo para os campos de entrada de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+  width: 90%;
+  padding: 15px;
+  margin-top: 5px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  font-family: 'Times New Roman';
+
+}
+
+
+#sexo {
+  width: 96%;
+  padding: 15px;
+  margin-top: 5px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+
+
+#confirmarSenha {
+  width: 90%;
+  padding: 15px;
+  margin-top: 5px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  /* Tamanho da fonte */
+  font-weight: normal;
+  /* Peso da fonte */
+  color: #999;
+  /* Cor do texto do placeholder */
+}
+
+select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  /* Tamanho da fonte */
+  font-weight: normal;
+  /* Peso da fonte */
+}
+
+input[type="text"] {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  /* Tamanho da fonte */
+  font-weight: normal;
+  /* Peso da fonte */
+}
+
+
+
+/* Estilo para o botão de cadastro */
+.Cadastro {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilo para links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Estilo para mensagens de erro */
+
+
+/* Estilo para os elementos select */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Estilo para parágrafos dentro do formulário */
+p.form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para campos de senha */

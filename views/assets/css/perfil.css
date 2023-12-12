@@ -22,10 +22,10 @@ h1 {
     margin-top: -500px;
     margin-left: 700px;
     width: 500px;
-} 
+}
 
 td {
-    display: flex; 
+    display: flex;
     flex-direction: row;
     font-family: georgia;
 }

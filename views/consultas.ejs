@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include("assets/pages/head"); %>
-  <link rel="stylesheet" type="text/css" href="assets/css/consultas.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/consultas.css">
 </head>
+
 <body>
   <%- include("assets/pages/nav"); %>
-  <a href="/agendamento" ><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"></a><div class="divisao"></div>
-  <div class="informacoes">
-  <h1><b>Suas consultas</b> <i><%=req.session.name%></i></h1><br><br><br>
+    <a href="/agendamento"><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"></a>
+    <div class="divisao"></div>
+    <div class="informacoes">
+      <h1><b>Suas consultas</b> <i>
+          <%=req.session.name%>
+        </i></h1><br><br><br>
 
-  
-    <table id="datatablesSimple">
+
+      <table id="datatablesSimple">
         <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Data</th>
-                <th>Horário</th>
-                <th>Médico</th>
-                <th>Informações a mais</th>
-            </tr>
+          <tr>
+            <th>Nome</th>
+            <th>Data</th>
+            <th>Horário</th>
+            <th>Médico</th>
+            <th>Informações a mais</th>
+          </tr>
         </thead>
         <tbody>
           <ul>
             <% dados.forEach(function(row) { %>
               <tr>
-                <td><%=row.username%></td><td><%=row.date%></td>
-                <td><%=row.horario%></td><td><%=row.medico%></td>
-                <td><%=row.informacoesamais%></td> 
+                <td>
+                  <%=row.username%>
+                </td>
+                <td>
+                  <%=row.date%>
+                </td>
+                <td>
+                  <%=row.horario%>
+                </td>
+                <td>
+                  <%=row.medico%>
+                </td>
+                <td>
+                  <%=row.informacoesamais%>
+                </td>
               </tr>
-            <% }); %>
-    </tbody>
-</table>
-<script>
-  window.addEventListener('DOMContentLoaded', event => {
-      // Simple-DataTables
-      // https://github.com/fiduswriter/Simple-DataTables/wiki
-  
-      const datatablesSimple = document.getElementById('datatablesSimple');
-      if (datatablesSimple) {
-          new simpleDatatables.DataTable(datatablesSimple);
-      }
-  });
-  </script>
-</div>
+              <% }); %>
+        </tbody>
+      </table>
+      <script>
+        window.addEventListener('DOMContentLoaded', event => {
+          // Simple-DataTables
+          // https://github.com/fiduswriter/Simple-DataTables/wiki
+
+          const datatablesSimple = document.getElementById('datatablesSimple');
+          if (datatablesSimple) {
+            new simpleDatatables.DataTable(datatablesSimple);
+          }
+        });
+      </script>
+    </div>
 </body>
+
 </html>

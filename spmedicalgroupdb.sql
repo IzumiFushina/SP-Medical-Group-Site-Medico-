@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 12-Dez-2023 às 14:57
+-- Tempo de geração: 12-Dez-2023 às 16:37
 -- Versão do servidor: 8.0.35-0ubuntu0.22.04.1
 -- versão do PHP: 8.1.2-1ubuntu2.14
 
@@ -81,7 +81,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `cpf`, `sexo`, `datanasciment
 (37, 'Miguel Tiradentes', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-07', 'Masculino', '2004-12-20', 'miguel@gmail.com', 'Medico'),
 (38, 'Fátima dos Santos', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-08', 'Feminino', '1999-03-14', 'fatima@gmail.com', 'Medico'),
 (39, 'Fernando Ferreiro', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-09', 'Masculino', '2001-04-12', 'fernando@gmail.com', 'Gestor'),
-(40, 'Guilherme Ped', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-00', 'Masculino', '2003-02-11', 'ped@gmail.com', 'user');
+(40, 'Guilherme Ped', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-00', 'Masculino', '2003-02-11', 'ped@gmail.com', 'user'),
+(44, 'Machado', '20eabe5d64b0e216796e834f52d61fd0b70332fc', '999.999.999-99', 'Masculino', '2023-12-12', 'm@m.com', 'user');
 
 --
 -- Índices para tabelas despejadas
@@ -101,7 +102,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

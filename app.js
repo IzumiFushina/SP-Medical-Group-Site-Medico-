@@ -77,7 +77,7 @@ app.get('/login', (req, res) => {
 });
 // Rota para processar o formulário de login
 app.post('/login', (req, res) => {
-  const { username, password, cpf} = req.body;
+  const { username, password, cpf } = req.body;
 
   const query = 'SELECT * FROM users WHERE username = ? AND password = SHA1(?) AND cpf = ?';
 
@@ -176,7 +176,7 @@ app.post('/agendamento', (req, res) => {
 
   const { username, email, date, horario, medico, informacoesamais } = req.body;
 
-  const query = 'INSERT INTO consultas (username, email, date, horario, medico, informacoesamais) VALUES ( "`${req.session.name}´", ?, ?, ?, ?, ?)';
+  const query = 'INSERT INTO consultas (username, email, date, horario, medico, informacoesamais) VALUES ( ?, ?, ?, ?, ?, ?)';
   db.query(query, [username, email, date, horario, medico, informacoesamais], (err, results) => {
     if (err) {
       console.error('Erro ao agendar a consulta', err);
@@ -264,7 +264,7 @@ app.post('/Cadastro', (req, res) => {
       db.query(query, [username, cpf, datanascimento, sexo, password, email], (err, results) => {
         if (err) {
           console.error('Erro ao inserir usuário:', err);
-          res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><h1>Obrigado por sua escolha!</h1><br><br><br><br><a href="/cadastro">Erro ao cadastrar, tente novamente</a></body></html>');
+          res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/cadastro">Erro ao cadastrar, tente novamente</a></body></html>');
         } else {
           res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><h1>Obrigado por sua escolha!</h1><br><br><br><br><a href="/login">Seu cadastro foi realizado com sucesso, volte para sua página</a></body></html>');
         }

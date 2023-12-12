@@ -1,88 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SP-Medical Group</title>
-    <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
-    <link rel="stylesheet" type="text/css" href="assets/css/cadastro.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SP-Medical Group</title>
+  <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
+  <link rel="stylesheet" type="text/css" href="assets/css/cadastro.css">
 
 </head>
+
 <body>
-<header>
+  <header>
     <div class="divlogo">
-        <a href="/">
-          <img src="assets/SP-Medical Group/assets/img/logo.png" class="logo">
-        </a>
-      </div>
-    </header>
+      <a href="/">
+        <img src="assets/SP-Medical Group/assets/img/logo.png" class="logo">
+      </a>
+    </div>
+  </header>
 
-      <div id="cadastro" class="submenu">  
-        <form action="/Cadastro" method="post" class="formulario" id="formCadastro">
+  <div id="cadastro" class="submenu">
+    <form action="/Cadastro" method="post" class="formulario" id="formCadastro">
 
-          <h1> CRIE SUA CONTA </h1>
+      <h1> CRIE SUA CONTA </h1>
 
-  <label for="nomeCompleto">Nome Completo:</label>
-  <input placeholder="Ex: João da Silva" oninput="validarNomeCompleto(this)" type="text" name="username" id="username" required><br><br>
+      <label for="nomeCompleto">Nome Completo:</label>
+      <input placeholder="Ex: João da Silva" oninput="validarNomeCompleto(this)" type="text" name="username"
+        id="username" required><br><br>
 
-  <label for="email">Email:</label>
-  <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email" required><br><br>
+      <label for="email">Email:</label>
+      <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email"
+        required><br><br>
 
-  <label for="cpf">CPF:</label>
-  <input maxlength="14" placeholder="000.000.000-00" oninput="formatarCPF(this)" type="text" name="cpf" id="cpf" required><br><br>
+      <label for="cpf">CPF:</label>
+      <input maxlength="14" placeholder="000.000.000-00" oninput="formatarCPF(this)" type="text" name="cpf" id="cpf"
+        required><br><br>
 
 
-  <label for="dataNascimento">Data de Nascimento:</label>
-  <input placeholder="Data de nascimento ex.: 11/05/1980" type="date" name="datanascimento" id="datanascimento" required><br><br>
+      <label for="dataNascimento">Data de Nascimento:</label>
+      <input placeholder="Data de nascimento ex.: 11/05/1980" type="date" name="datanascimento" id="datanascimento"
+        required><br><br>
 
-  <label for="sexo">Selecione o Sexo Biológico:</label>
-  <select placeholder="Sexo" type="text" name="sexo" id="sexo" required>
-    <option value="" disabled selected>Selecione o Sexo</option>
-    <option value="Masculino">Masculino</option>
-    <option value="Feminino">Feminino</option>
-    <option value="NaoInformado">Não informar</option>
-  </select><br><br>
-  <label>Senha:</label>
-  <input type="password" id="password" minlength="8">
-  <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
-  
-  <script>
-    function togglePasswordVisibility() {
-      const passwordInput = document.getElementById("password");
-      const toggleButton = document.querySelector(".toggle-password");
-  
-      if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleButton.innerHTML = "";
-      } else {
-        passwordInput.type = "password";
-        toggleButton.innerHTML = "";
-      }
-    }
-  </script>
-  <style>
-    /* Optional: Style for the button */
-    .toggle-password {
-      cursor: pointer;
-      user-select: none;
-      position: relative;
-    }
+      <label for="sexo">Selecione o Sexo Biológico:</label>
+      <select placeholder="Sexo" type="text" name="sexo" id="sexo" required>
+        <option value="" disabled selected>Selecione o Sexo</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+        <option value="NaoInformado">Não informar</option>
+      </select><br><br>
+      <label for="senha">Senha:</label>
+      <input placeholder="Digite sua Senha" type="password" name="password" id="password" pattern="^{8,}$" required
+        title="Mínimo, 8 caracteres." required>
+      <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
 
-    .toggle-password:before {
-      content: "🔒";
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-    }
-  </style>
-    <br><br>
-  <button type="submit" class="Cadastro" value="user" >Cadastrar</button>
-</form>
-      </div>
 
-<script src="assets/js/functions.js" ></script>
+      <style>
+        /* Optional: Style for the button */
+        .toggle-password {
+          cursor: pointer;
+          user-select: none;
+          position: relative;
+        }
+
+        .toggle-password:before {
+          content: "🔒";
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+        }
+      </style>
+      <br><br>
+      <button type="submit" class="Cadastro" value="user">Cadastrar</button>
+    </form>
+  </div>
+
+  <script src="assets/js/functions.js"></script>
 </body>
 
 </html>
- 

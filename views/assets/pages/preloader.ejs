@@ -1,72 +1,75 @@
 <style>
-/*--------------------------------------------------------------
+  /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background: #fff;
-  text-align: center;
-}
-
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(65% - 30px);
-  border: 6px solid #51b3f1;
-  border-top-color: #d1e6f9;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: animate-preloader 1s linear infinite;
-  align-items: center;
-  text-align: center;
-}
-
-#logopre{
-
-  position: fixed;
-  text-align: center;
-  font-size: 60px;
-  top: calc(47% - 30px);
-  left: calc(37% - 30px);
-}
-
-.logo{
-  display: inline-block;
-  
-}
-
-@keyframes animate-preloader {
-  0% {
-    transform: rotate(0deg);
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+    text-align: center;
   }
 
-  100% {
-    transform: rotate(360deg);
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(65% - 30px);
+    border: 6px solid #51b3f1;
+    border-top-color: #d1e6f9;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1s linear infinite;
+    align-items: center;
+    text-align: center;
   }
-}
+
+  #logopre {
+
+    position: fixed;
+    text-align: center;
+    font-size: 60px;
+    top: calc(47% - 30px);
+    left: calc(37% - 30px);
+  }
+
+  .logo {
+    display: inline-block;
+
+  }
+
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 </style>
 
-<div id="preloader"><div id="logopre" ><img src="assets/SP-Medical Group/assets/img/logo.png" class="logo"></div></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<div id="preloader">
+  <div id="logopre"><img src="assets/SP-Medical Group/assets/img/logo.png" class="logo"></div>
+</div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
 
-  <script>
-// Prealoader
-document.addEventListener("DOMContentLoaded", function () {
-  
-  
-  // Aguarde 1 segundo (1000 milissegundos) e remova o preloader
-    
-   
-  setTimeout(function () {
+<script>
+  // Prealoader
+  document.addEventListener("DOMContentLoaded", function () {
+
+
+    // Aguarde 1 segundo (1000 milissegundos) e remova o preloader
+
+
+    setTimeout(function () {
       document.getElementById("preloader").style.display = "none";
     }, 1500);
   });
-  </script>
+</script>

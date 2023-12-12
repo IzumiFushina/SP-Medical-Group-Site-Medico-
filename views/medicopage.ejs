@@ -1,181 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
-        <title>SP-Medical Group</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href= "assets/admin-pages/css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-    <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
+    <title>SP-Medical Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="assets/admin-pages/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
         <div class="navbar-brand ps-3"><span>Bem vindo(a) <%= req.session.name %></span></div>
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="assets/admin-pages/#!"></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-   
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle"
+            href="assets/admin-pages/#!"></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
 
-                </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="assets/admin-pages/#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="/logout">Sair</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Edição</div>
-                            <a class="nav-link" href="http://localhost/phpmyadmin/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Consultass
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Gestão</div>
-                            <a class="nav-link collapsed" href="assets/admin-pages/#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Agendamento
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="assets/admin-pages/#" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="/logout">Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Edição</div>
+                        <a class="nav-link" href="http://localhost/phpmyadmin/">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Consultass
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Gestão</div>
+                        <a class="nav-link collapsed" href="assets/admin-pages/#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Agendamento
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" onclick="abrirPopupAgendamento()">Agendar</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="assets/admin-pages/#" data-bs-toggle="collapse"
+                            data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"></div>
+
+                            <div class="sb-sidenav-collapse-arrow"></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" onclick="abrirPopupAgendamento()" >Agendar</a>
+
                                 </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="assets/admin-pages/#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"></div>
-                                
-                                <div class="sb-sidenav-collapse-arrow"></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                          
-                                        </nav>
-                                    
-                                </nav>
-                            </div>
-                            <div class="sb-sidenav-menu-heading"></div>
-                            <a class="nav-link">
-                                <div class="sb-nav-link-icon"></div>
-                                
-                            </a>
-                            <a class="nav-link">
-                                <div class="sb-nav-link-icon"></div>
-                                
-                            </a>
+
+                            </nav>
                         </div>
+                        <div class="sb-sidenav-menu-heading"></div>
+                        <a class="nav-link">
+                            <div class="sb-nav-link-icon"></div>
+
+                        </a>
+                        <a class="nav-link">
+                            <div class="sb-nav-link-icon"></div>
+
+                        </a>
                     </div>
-
-                        <div class="sb-sidenav-footer">
-                            <div class="small"><p><!--Não apague o espaço da tag <p>-->                                                                                                                                                                                                                                                            
-                            </p><span id="current-time" ></span>
-                            </div>
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Painel de Controle</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Tabela 'consultass'</li>
-                        </ol>
-
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Informações referentes a agendamentos
-                            </div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <table id="datatablesSimple">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                                <th>Data</th>
-                                                <th>Hora</th>
-                                                <th>Médico</th>
-                                                <th>informacoesamais</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <% consultas.forEach(consultas => { %>
-                                                <tr>
-                                                    <td><%= consultas.username %></td>
-                                                    <td><%= consultas.date %></td>
-                                                    <td><%= consultas.horario %></td>
-                                                    <td><%= consultas.medico %></td>
-                                                    <td><%= consultas.informacoesamais%></td>
-                                                </tr>
-                                            <% }); %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <style>
-                                    .container {
-                                        margin: 30px;
-                                    }
-                                
-                                    #datatablesSimple {
-                                        border-collapse: collapse;
-                                        width: 100%;
-                                    }
-                                
-                                    #datatablesSimple th,
-                                    #datatablesSimple td {
-                                        border: 1px solid black;
-                                        padding: 8px;
-                                        text-align: left;
-                                    }
-                                
-                                    #datatablesSimple th {
-                                        background-color: #51b3f1;
-                                        color: white;
-                                    }
-                                </style>
-                        </div>
                 </div>
-            </div>
+
+                <div class="sb-sidenav-footer">
+                    <div class="small">
+                        <p><!--Não apague o espaço da tag <p>-->
+                        </p><span id="current-time"></span>
+                    </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Painel de Controle</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Tabela 'consultass'</li>
+                    </ol>
+
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        Informações referentes a agendamentos
+                    </div>
+                    <div class="card-body">
+                        <div class="container">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Data</th>
+                                        <th>Hora</th>
+                                        <th>Médico</th>
+                                        <th>informacoesamais</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% consultas.forEach(consultas=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= consultas.username %>
+                                            </td>
+                                            <td>
+                                                <%= consultas.date %>
+                                            </td>
+                                            <td>
+                                                <%= consultas.horario %>
+                                            </td>
+                                            <td>
+                                                <%= consultas.medico %>
+                                            </td>
+                                            <td>
+                                                <%= consultas.informacoesamais%>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <style>
+                            .container {
+                                margin: 30px;
+                            }
+
+                            #datatablesSimple {
+                                border-collapse: collapse;
+                                width: 100%;
+                            }
+
+                            #datatablesSimple th,
+                            #datatablesSimple td {
+                                border: 1px solid black;
+                                padding: 8px;
+                                text-align: left;
+                            }
+
+                            #datatablesSimple th {
+                                background-color: #51b3f1;
+                                color: white;
+                            }
+                        </style>
+                    </div>
+                </div>
+        </div>
         </main>
     </div>
-    
-</div>
-<script>
-window.addEventListener('DOMContentLoaded', event => {
-    // Simple-DataTables
-    // https://github.com/fiduswriter/Simple-DataTables/wiki
 
-    const datatablesSimple = document.getElementById('datatablesSimple');
-    if (datatablesSimple) {
-        new simpleDatatables.DataTable(datatablesSimple);
-    }
-});
-</script>
-<%- include("assets/pages/preloader"); %>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', event => {
+            // Simple-DataTables
+            // https://github.com/fiduswriter/Simple-DataTables/wiki
+
+            const datatablesSimple = document.getElementById('datatablesSimple');
+            if (datatablesSimple) {
+                new simpleDatatables.DataTable(datatablesSimple);
+            }
+        });
+    </script>
+    <%- include("assets/pages/preloader"); %>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+            crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+            crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
         <script src="assets/js/functions.js"></script>
-    </body>
+</body>
+
 </html>

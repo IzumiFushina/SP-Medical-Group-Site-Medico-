@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Register - SB Admin</title>
-        <link href="SP-Medical Group/assets/img/logoicon.png" rel="icon">
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Register - SB Admin</title>
+  <link href="SP-Medical Group/assets/img/logoicon.png" rel="icon">
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
 <style>
-    /* Estilo global para o corpo da página */
-html {
-  height: 120%;
-  
-}
+  /* Estilo global para o corpo da página */
+  html {
+    height: 120%;
 
-* 
-body {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
-}
-  
+  }
 
-header {
-  background-color: white;
-  height: 112px;
-  align-items: center;
-  text-align: center;
-  max-width: 100%;
-}
+  * body {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(0, 108, 169, 1) 100%);
+  }
+
+
+  header {
+    background-color: white;
+    height: 112px;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
 
   /* editar logo */
-  
 
-  .divlogo{
+
+  .divlogo {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 120px; /* Torna a div do tamanho da janela de visualização */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 120px;
+    /* Torna a div do tamanho da janela de visualização */
     margin-top: 0%;
   }
 
-  
-  
-  
+
+
+
   /* Estilo para o contêiner do formulário de cadastro */
   .submenu {
     background-color: #ffffff;
@@ -56,24 +59,26 @@ header {
     padding: 20PX;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     align-items: center;
-    
-    
-      width: 700px; /* Define a largura do container */
-      height: 750px; /* Define a altura do container */
-    
-    
+
+
+    width: 700px;
+    /* Define a largura do container */
+    height: 750px;
+    /* Define a altura do container */
+
+
   }
-  
+
   /* Estilo para o título "Crie sua conta" */
   h1 {
-   text-align: center;
+    text-align: center;
     font-size: 24px;
     margin: 0;
     margin-bottom: 20px;
     color: #000000;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+
   /* Estilo para os rótulos dos campos de entrada */
   label {
     display: block;
@@ -82,7 +87,7 @@ header {
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+
   /* Estilo para os campos de entrada de texto */
   input[type="text"],
   input[type="email"],
@@ -95,11 +100,11 @@ header {
     border: 1px solid #000000;
     border-radius: 3px;
     font-family: 'Times New Roman';
-    
+
   }
 
 
-  #sexo{
+  #sexo {
     width: 96%;
     padding: 15px;
     margin-top: 5px;
@@ -107,7 +112,7 @@ header {
     border-radius: 3px;
   }
 
-  #password{
+  #password {
     width: 90%;
     padding: 15px;
     margin-top: 5px;
@@ -115,42 +120,51 @@ header {
     border-radius: 3px;
   }
 
-  #tipo{
+  #tipo {
     width: 96%;
     padding: 15px;
     margin-top: 5px;
     border: 1px solid #000000;
     border-radius: 3px;
-  } 
+  }
 
-  #confirmarSenha{
+  #confirmarSenha {
     width: 90%;
     padding: 15px;
     margin-top: 5px;
     border: 1px solid #000000;
     border-radius: 3px;
   }
-  input::placeholder, textarea::placeholder {
+
+  input::placeholder,
+  textarea::placeholder {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: normal; /* Peso da fonte */
-    color: #999; /* Cor do texto do placeholder */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    font-weight: normal;
+    /* Peso da fonte */
+    color: #999;
+    /* Cor do texto do placeholder */
   }
 
   select {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: normal; /* Peso da fonte */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    font-weight: normal;
+    /* Peso da fonte */
   }
 
   input[type="text"] {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: normal; /* Peso da fonte */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    font-weight: normal;
+    /* Peso da fonte */
   }
-  
-  
-  
+
+
+
   /* Estilo para o botão de cadastro */
   .Cadastro {
     background-color: #007bff;
@@ -160,23 +174,24 @@ header {
     padding: 15px 30px;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    
-      position: relative;
-      left: 170px; /* Move o botão 10px para a direita */
-    
 
-    
+    position: relative;
+    left: 170px;
+    /* Move o botão 10px para a direita */
+
+
+
   }
-  
+
   /* Estilo para links */
   a {
     color: #007bff;
     text-decoration: none;
   }
-  
+
   /* Estilo para mensagens de erro */
 
-  
+
   /* Estilo para os elementos select */
   select {
     width: 100%;
@@ -185,73 +200,98 @@ header {
     border: 1px solid #ccc;
     border-radius: 3px;
   }
-  
+
   /* Estilo para parágrafos dentro do formulário */
   p.form {
     margin: 0;
     padding: 0;
   }
-  
+
   /* Estilo para campos de senha */
   input[type="password"] {
     width: 48%;
     margin-right: 2%;
     border-radius: 5px;
   }
-  
 </style>
+
 <body>
-<header>
+  <header>
     <div class="divlogo">
-        <a href="/">
-          <img src="assets/SP-Medical Group/assets/img/logo.png" class="logo">
-        </a>
-      </div>
-    </header>
+      <a href="/">
+        <img src="assets/SP-Medical Group/assets/img/logo.png" class="logo">
+      </a>
+    </div>
+  </header>
 
-      <div id="cadastro" class="submenu">  
-        <form action="/register" method="post" class="formulario" id="formCadastro">
+  <div id="cadastro" class="submenu">
+    <form action="/register" method="post" class="formulario" id="formCadastro">
 
-          <h1> CRIE UM USUÁRIO </h1>
+      <h1> CRIE UM USUÁRIO </h1>
 
-  <label for="username">Nome Completo:</label>
-  <input placeholder="Ex: João da Silva" oninput="validarusername(this)" type="text" name="username" id="username" required><br><br>
+      <label for="username">Nome Completo:</label>
+      <input placeholder="Ex: João da Silva" oninput="validarusername(this)" type="text" name="username" id="username"
+        required><br><br>
 
-  <label for="email">Email:</label>
-  <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email" required><br><br>
+      <label for="email">Email:</label>
+      <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email"
+        required><br><br>
 
-  <label for="cpf">CPF:</label>
-  <input maxlength="14" placeholder="000.000.000-00" oninput="formatarCPF(this)" type="text" name="cpf" id="cpf" required><br><br>
+      <label for="cpf">CPF:</label>
+      <input maxlength="14" placeholder="000.000.000-00" oninput="formatarCPF(this)" type="text" name="cpf" id="cpf"
+        required><br><br>
 
 
-  <label for="dataNascimento">Data de Nascimento:</label>
-  <input placeholder="Data de nascimento ex.: 11/05/1980" type="date" name="datanascimento" id="datanascimento" required><br><br>
+      <label for="dataNascimento">Data de Nascimento:</label>
+      <input placeholder="Data de nascimento ex.: 11/05/1980" type="date" name="datanascimento" id="datanascimento"
+        required><br><br>
 
-  <label for="sexo">Selecione o Sexo Biológico:</label>
-  <select placeholder="Sexo" type="text" name="sexo" id="sexo" required>
-    <option value="" disabled selected>Selecione o Sexo</option>
-    <option value="Masculino">Masculino</option>
-    <option value="Feminino">Feminino</option>
-    <option value="NaoInformado">Não informar</option>
-  </select><br><br>
+      <label for="sexo">Selecione o Sexo Biológico:</label>
+      <select placeholder="Sexo" type="text" name="sexo" id="sexo" required>
+        <option value="" disabled selected>Selecione o Sexo</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+        <option value="NaoInformado">Não informar</option>
+      </select><br><br>
 
-  <label for="senha">Senha:</label>
-  <input placeholder="Digite sua Senha" type="password" name="password" id="password" pattern="^{8,}$" required title="Mínimo, 8 caracteres."required><br><br>
+      <label for="senha">Senha:</label>
+      <input placeholder="Digite sua Senha" type="password" name="password" id="password" pattern="^{8,}$" required
+        title="Mínimo, 8 caracteres." required>
+      <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
 
-  <label for="tipo">Selecione o tipo</label>
-  <select placeholder="Tipo" type="text" name="tipo" id="tipo" required>
-    <option value="" disabled selected>Selecione o tipo de usuário</option>
-    <option value="Administrador">Administrador</option>
-    <option value="Gestor">Gestor</option>
-    <option value="Medico">Médico</option>
-    <option value="Usuário">Usuário comum</option>
-  </select><br><br>
 
-  <button type="submit" class="Cadastro" >Cadastrar</button>
-</form>
-      </div>
+      <style>
+        /* Optional: Style for the button */
+        .toggle-password {
+          cursor: pointer;
+          user-select: none;
+          position: relative;
+        }
 
-<script src="assets/js/functions.js" ></script>
+        .toggle-password:before {
+          content: "🔒";
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+        }
+      </style>
+      <br><br>
+
+      <label for="tipo">Selecione o tipo</label>
+      <select placeholder="Tipo" type="text" name="tipo" id="tipo" required>
+        <option value="" disabled selected>Selecione o tipo de usuário</option>
+        <option value="Administrador">Administrador</option>
+        <option value="Gestor">Gestor</option>
+        <option value="Medico">Médico</option>
+        <option value="Usuário">Usuário comum</option>
+      </select><br><br>
+
+      <button type="submit" class="Cadastro">Cadastrar</button>
+    </form>
+  </div>
+
+  <script src="assets/js/functions.js"></script>
 </body>
 
 </html>

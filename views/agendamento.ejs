@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href= "assets/admin-pages/css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="assets/css/agendamento.css">
-    <!-- Favicons -->
-    <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+  <link href="assets/admin-pages/css/styles.css" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/agendamento.css">
+  <!-- Favicons -->
+  <link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon">
   <title>SP-Medical Group</title>
 
-  
+
 </head>
+
 <body>
-  
+
   <%- include("assets/pages/nav"); %>
-  <div  class="submenu">
-    <h2>Agendar Consulta Médica</h2>
-    <form action="/agendamento" method="post" id="consultas"  >
+    <div class="submenu">
+      <h2>Agendar Consulta Médica</h2>
+      <form action="/agendamento" method="post" id="consultas">
 
-      <input id="username" name="username" value="<%=req.session.name%>" required><br>
-      
-      <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email" required><br>
+        <input id="username" name="username" value="<%=req.session.name%>" required><br>
 
-      <input placeholder="Horário" type="date" name="date" id="date" required><br>
+        <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email" required><br>
 
-      <input placeholder="" type="time" id="horario" name="horario" required><br>
+        <input placeholder="Horário" type="date" name="date" id="date" required><br>
 
-      <select id="medico" name="medico" required>
-        <option value="" >Selecione um Departamento/Médico</option> 
-        <option value="Cardiologista Doctor Who" >Cardiologia/Doctor Who</option> 
-        <option value="Neurologista Elizabeth Schimidt" >Neurologia/Elizabeth Schimidt</option> 
-        <option value="Fisioterapeuta Bonnie Fazbear" >Fisioterapia/Bonnie Fazbear</option>
-        <option value="Pediatra Milena Shokan">Pediatria/Milena Shokan</option>
-        <option value="Oncologista Walter White">Oncologia/Walter White</option>
-        <option value=" Odontologista Miguel Tiradentes">Odontologia/Miguel Tiradentes</option>
-        <option value="Ginecologista dos Santos">Ginecologia/Fátima dos Santos</option>
-      </select><br>
+        <input placeholder="" type="time" id="horario" name="horario" required><br>
 
-      <input placeholder="Descreva alguma observação" onclick="alertinput()" type="informacoesamais" id="informacoesamais" name="informacoesamais"><br>
+        <select id="medico" name="medico" required>
+          <option value="">Selecione um Departamento/Médico</option>
+          <option value="Cardiologista Doctor Who">Cardiologia/Doctor Who</option>
+          <option value="Neurologista Elizabeth Schimidt">Neurologia/Elizabeth Schimidt</option>
+          <option value="Fisioterapeuta Bonnie Fazbear">Fisioterapia/Bonnie Fazbear</option>
+          <option value="Pediatra Milena Shokan">Pediatria/Milena Shokan</option>
+          <option value="Oncologista Walter White">Oncologia/Walter White</option>
+          <option value=" Odontologista Miguel Tiradentes">Odontologia/Miguel Tiradentes</option>
+          <option value="Ginecologista dos Santos">Ginecologia/Fátima dos Santos</option>
+        </select><br>
 
-      <button type="submit">Agendar</button>
-    </form>
-    <%- include("assets/pages/preloader"); %>
-    <script src="assets/js/functions.js" ></script>
+        <input placeholder="Descreva alguma observação" onclick="alertinput()" type="informacoesamais"
+          id="informacoesamais" name="informacoesamais"><br>
+
+        <button type="submit">Agendar</button>
+      </form>
+      <%- include("assets/pages/preloader"); %>
+        <script src="assets/js/functions.js"></script>
 </body>
+
 </html>
