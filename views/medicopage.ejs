@@ -123,11 +123,12 @@
                                         <th>Data</th>
                                         <th>Hora</th>
                                         <th>Médico</th>
-                                        <th>informacoesamais</th>
+                                        <th>Informações a mais</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <% consultas.forEach(consultas=> { %>
+                                        <% if (consultas.medico === req.session.name) { %>
                                         <tr>
                                             <td>
                                                 <%= consultas.username %>
@@ -145,6 +146,7 @@
                                                 <%= consultas.informacoesamais%>
                                             </td>
                                         </tr>
+                                        <% } %>
                                         <% }); %>
                                 </tbody>
                             </table>
