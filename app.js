@@ -143,7 +143,7 @@ app.get('/perfil', (req, res) => {
     });
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+    res.send(404, '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 
@@ -156,7 +156,7 @@ app.get('/consultas', (req, res) => {
     });
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+    res.send(404, '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 
@@ -167,7 +167,7 @@ app.get('/agendamento', (req, res) => {
 
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+    res.send(404, '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 
@@ -190,7 +190,7 @@ app.post('/agendamento', (req, res) => {
 
 app.get('/gestorpage', (req, res) => {
   if (req.session.loggedin && req.session.name) {
-    if (req.session.tipoUsuario === 'Gestor', 'Administrador') {
+    if (req.session.tipoUsuario === 'Gestor' || req.session.tipoUsuario === 'Administrador') {
       db.query('SELECT * FROM mensagens', (err, result) => {
         if (err) throw err;
         res.render('gestorpage', { req: req, mensagens: result });
@@ -198,17 +198,19 @@ app.get('/gestorpage', (req, res) => {
       });
       // Tentativa de invasão por usuários sem permissão, leva o usuário ser desconectado da págian
     } else {
-      res.redirect('/logout');
+      res.send(403);
     }
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+    res.send(404, '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 
 app.get('/medicopage', (req, res) => {
   if (req.session.loggedin && req.session.name) {
-    if (req.session.tipoUsuario === 'Medico', 'Administrador') {
+    // if (req.session.tipoUsuario === 'Medico', 'Administrador'){ // NÃO UTILIZAR ESTE TIPO DE CONSTRUÇÃO EM IF
+    if (req.session.tipoUsuario === 'Medico' || req.session.tipoUsuario === 'Administrador') {
+      console.log(`Entrando em /medicopage`)
       db.query('SELECT * FROM consultas', (err, result) => {
         if (err) throw err;
         res.render('medicopage', { req: req, consultas: result });
@@ -216,11 +218,11 @@ app.get('/medicopage', (req, res) => {
       });
       // Tentativa de invasão por usuários sem permissão, leva o usuário ser desconectado da págian
     } else {
-      res.redirect('/logout');
+      res.send(403);
     }
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+    res.send(404, '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 
@@ -239,11 +241,11 @@ app.get('/indexadmin', (req, res) => {
       });
       // Tentativa de invasão por usuários sem permissão, leva o usuário ser desconectado da págian
     } else {
-      res.redirect('/logout');
+      res.send(403);
     }
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+    res.send(404, '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 
@@ -262,11 +264,11 @@ app.get('/indexadmintableconsultas', (req, res) => {
       });
       // Tentativa de invasão por usuários sem permissão, leva o usuário ser desconectado da págian
     } else {
-      res.redirect('/logout');
+      res.send(403);
     }
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+    res.send(404, '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 
@@ -285,11 +287,11 @@ app.get('/indexadmintablemensagens', (req, res) => {
       });
       // Tentativa de invasão por usuários sem permissão, leva o usuário ser desconectado da págian
     } else {
-      res.redirect('/logout');
+      res.send(403);
     }
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+    res.send(404, '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 
@@ -329,11 +331,11 @@ app.get('/register', (req, res) => {
       console.log(req.session);
       // Tentativa de invasão por usuários sem permissão, leva o usuário ser desconectado da págian
     } else {
-      res.redirect('/logout');
+      res.send(403);
     }
   } else {
     // Se não estiver autenticado, redireciona para a página de login
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
+    res.send(404, '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="assets/SP-Medical Group/assets/img/logoicon.png" rel="icon"><title>SP-Medical Group</title><style>body{align-items:center;text-align:center;justify-content:center;background-color:rgb(240,240,240);}a{color:black;}.logo{margin-top:100px;}</style></head><body><img class="logo" src="assets/SP-Medical Group/assets/img/logo.png"><br><br><br><br><br><br><br><br><br><br><br><br><a href="/login">É necessário fazer login para acessar sua página</a></body></html>');
   }
 });
 

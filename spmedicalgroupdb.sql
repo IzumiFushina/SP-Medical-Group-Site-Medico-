@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 12-Dez-2023 às 21:01
+-- Tempo de geração: 13-Dez-2023 às 11:01
 -- Versão do servidor: 8.0.35-0ubuntu0.22.04.1
 -- versão do PHP: 8.1.2-1ubuntu2.14
 
@@ -28,9 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `consultas` (
+  `id` bigint NOT NULL,
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `date` text COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `date` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `horario` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `medico` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `informacoesamais` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
@@ -40,11 +41,11 @@ CREATE TABLE `consultas` (
 -- Extraindo dados da tabela `consultas`
 --
 
-INSERT INTO `consultas` (`username`, `email`, `date`, `horario`, `medico`, `informacoesamais`) VALUES
-('Guilherme Ped', 'guipedromilo@gmail.com', '2023-12-12', '18:00', 'Doctor Who', ''),
-('Guilherme Ped', 'guipedromilo@gmail.com', '2023-12-12', '18:30', 'Milena Shokan', ''),
-('Guilherme Ped', 'guipedromilo@gmail.com', '2023-12-20', '12:01', 'Walter White', ''),
-('Guilherme Ped', 'guipedromilo@gmail.com', '2023-12-22', '12:00', 'Miguel Tiradentes', 'Manutenção');
+INSERT INTO `consultas` (`id`, `username`, `email`, `date`, `horario`, `medico`, `informacoesamais`) VALUES
+(1, 'Guilherme Ped', 'guipedromilo@gmail.com', '2023-12-12', '18:00', 'Doctor Who', ''),
+(2, 'Guilherme Ped', 'guipedromilo@gmail.com', '2023-12-12', '18:30', 'Milena Shokan', ''),
+(3, 'Guilherme Ped', 'guipedromilo@gmail.com', '2023-12-20', '12:01', 'Walter White', ''),
+(4, 'Guilherme Ped', 'guipedromilo@gmail.com', '2023-12-22', '12:00', 'Miguel Tiradentes', 'Manutenção');
 
 -- --------------------------------------------------------
 
@@ -53,6 +54,7 @@ INSERT INTO `consultas` (`username`, `email`, `date`, `horario`, `medico`, `info
 --
 
 CREATE TABLE `mensagens` (
+  `id` int NOT NULL,
   `nomecompleto` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `assunto` varchar(255) NOT NULL,
@@ -91,11 +93,26 @@ INSERT INTO `users` (`id`, `username`, `password`, `cpf`, `sexo`, `datanasciment
 (37, 'Miguel Tiradentes', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-07', 'Masculino', '2004-12-20', 'miguel@gmail.com', 'Medico'),
 (38, 'Fátima dos Santos', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-08', 'Feminino', '1999-03-14', 'fatima@gmail.com', 'Medico'),
 (39, 'Fernando Ferreiro', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-09', 'Masculino', '2001-04-12', 'fernando@gmail.com', 'Gestor'),
-(40, 'Guilherme Ped', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-00', 'Masculino', '2003-02-11', 'ped@gmail.com', 'user');
+(40, 'Guilherme Ped', '7c222fb2927d828af22f592134e8932480637c0d', '000.000.000-00', 'Masculino', '2003-02-11', 'ped@gmail.com', 'user'),
+(46, 'A A', '356a192b7913b04c54574d18c28d46e6395428ab', '100.000.000-02', 'NaoInformado', '2023-12-13', 'a@ay.com', 'user'),
+(47, 'Joao', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '222.222.222-22', 'Masculino', '2023-12-16', 'carolinelvr@gmail.com', 'user'),
+(48, 'Admin B', '7c222fb2927d828af22f592134e8932480637c0d', '111.111.111-11', 'Masculino', '1992-05-11', 'admin@gmail.com', 'Administrador');
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `consultas`
+--
+ALTER TABLE `consultas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `mensagens`
+--
+ALTER TABLE `mensagens`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `users`
@@ -108,10 +125,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de tabela `consultas`
+--
+ALTER TABLE `consultas`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `mensagens`
+--
+ALTER TABLE `mensagens`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
