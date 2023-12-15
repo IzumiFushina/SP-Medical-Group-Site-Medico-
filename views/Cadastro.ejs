@@ -18,29 +18,22 @@
       </a>
     </div>
   </header>
-
   <div id="cadastro" class="submenu">
     <form action="/Cadastro" method="post" class="formulario" id="formCadastro">
 
       <h1> CRIE SUA CONTA </h1>
-
       <label for="nomeCompleto">Nome Completo:</label>
       <input placeholder="Ex: João da Silva" oninput="validarNomeCompleto(this)" type="text" name="username"
         id="username" required><br><br>
-
       <label for="email">Email:</label>
       <input placeholder="Ex: exemplo@email.com" oninput="validarEmail(this)" type="text" name="email" id="email"
         required><br><br>
-
       <label for="cpf">CPF:</label>
       <input maxlength="14" placeholder="000.000.000-00" oninput="formatarCPF(this)" type="text" name="cpf" id="cpf"
         required><br><br>
-
-
       <label for="dataNascimento">Data de Nascimento:</label>
       <input placeholder="Data de nascimento ex.: 11/05/1980" type="date" name="datanascimento" id="datanascimento"
         required><br><br>
-
       <label for="sexo">Selecione o Sexo Biológico:</label>
       <select placeholder="Sexo" type="text" name="sexo" id="sexo" required>
         <option value="" disabled selected>Selecione o Sexo</option>
@@ -52,8 +45,6 @@
       <input placeholder="Digite sua Senha" type="password" name="password" id="password" pattern="^{8,}$" required
         title="Mínimo, 8 caracteres." required>
       <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
-
-
       <style>
         /* Optional: Style for the button */
         .toggle-password {
@@ -61,7 +52,6 @@
           user-select: none;
           position: relative;
         }
-
         .toggle-password:before {
           content: "🔒";
           position: absolute;
@@ -74,8 +64,6 @@
       <button type="submit" class="Cadastro" value="user">Cadastrar</button>
     </form>
   </div>
-
   <script src="assets/js/functions.js"></script>
 </body>
-
 </html>
